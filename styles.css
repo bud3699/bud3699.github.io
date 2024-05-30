@@ -425,3 +425,42 @@ ul {
 #discordForm input[type="submit"]:hover {
     background-color: #939494 ;
 }
+
+#discordForm input[type="file"] {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #eee;
+    background-color: #222;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#discordForm input[type="file"]:hover {
+    background-color: #939494;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #eee;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.custom-file-upload:hover {
+    background-color: #939494;
+}
+
+#preview {
+
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

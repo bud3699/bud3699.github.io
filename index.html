@@ -34,13 +34,20 @@
             <img src="https://github.com/bud3699/bud3699/blob/main/gifWave.gif?raw=true" alt="Image 1">
         </div>
         <div class="aboutme">
-
             <form id="discordForm">
                 <label for="message">Leave me a message, And it will display next to me</label><br>
-                <input type="text" id="message" name="message" oninput="adjustInput(this)"><br>
+                <input type="text" id="username" name="username" oninput="adjustInput(this)"
+                    placeholder="Username here"><br>
+
+                <input type="text" id="message" name="message" oninput="adjustInput(this)"
+                    placeholder="Comment here"><br>
+                <div style="text-align: center;">
+                    <label for="image" class="custom-file-upload">Click me to upload an image</label>
+                    <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+                </div><br>
+                <img id="preview" src="#" alt="Image preview..." style="display: none;"><br>
                 <input type="submit" value="Send">
             </form>
-
         </div>
         <br><br>
         <h1> What do I think of myself? </h1>
@@ -185,32 +192,76 @@
     </div>
 </body>
 <script>
-    function adjustInput(input) {
-        input.style.width = ((input.value.length) * 7) + 'px';
+    var username = localStorage.getItem('username');
+    if (username) {
+        document.getElementById('username').value = username;
     }
 
+    function adjustInput(input) {
+        input.style.width = ((input.value.length) * 7) + 'px';
+        if (input.id === 'username') {
+            localStorage.setItem('username', input.value);
+        }
+    }
 
     let webhookUrl = 'https://ptb.discord.com/api/webhooks/1118330339065077842/6A1isySsUd3ICB3KDMV_FLk45ppNotWpEXUtAjNEe3-gel60tdlUeFcTfJZxDLrK0MYf';
     let form = document.getElementById('discordForm');
 
     form.addEventListener('submit', function (event) {
-
         event.preventDefault();
+        let username = document.getElementById('username').value;
         let message = document.getElementById('message').value;
-        let body = JSON.stringify({
-            content: message
-        });
+        let image = document.getElementById('image').files[0];
+
+        // Check if username and message are not empty
+        if (!username || !message) {
+            alert('Please enter both a username and a message.');
+            return;
+        }
+
+        let formData = new FormData();
+        formData.append('username', username);
+        formData.append('content', message);
+        formData.append('file', image);
 
         let requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: body
+            body: formData
         };
 
         fetch(webhookUrl, requestOptions)
-            .then(response => console.log('Message sent!'))
+            .then(response => {
+                console.log('Message sent!');
+                document.getElementById('message').value = '';
+                let oldInput = document.getElementById('image');
+                let newInput = document.createElement('input');
+                newInput.type = 'file';
+                newInput.id = oldInput.id;
+                newInput.name = oldInput.name;
+                newInput.className = oldInput.className;
+                newInput.style.cssText = oldInput.style.cssText;
+                oldInput.parentNode.replaceChild(newInput, oldInput);
+                document.getElementById('preview').src = '';
+                document.getElementById('preview').style.display = 'none';
+            })
             .catch(error => console.error('Error:', error));
     });
+
+    document.getElementById('image').addEventListener('change', function (event) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('preview').src = e.target.result;
+            document.getElementById('preview').style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    });
 </script>
+
+
+
+
+
+
+
 
 </html>
