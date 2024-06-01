@@ -563,6 +563,11 @@ ul {
 }
 
 
+#aboutme {
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
 
 @media screen and (max-width: 600px) {
 
@@ -627,13 +632,17 @@ ul {
     }
 
     .scroll-btn{
-        font-size: 100% !important;
         width: fit-content;
+        white-space: normal;
+        max-width: 100px;
     }
 
 
     #toggle-header {
         display:none;
+    }
+    #aboutme {
+        margin-bottom: 100px;
     }
 
 }

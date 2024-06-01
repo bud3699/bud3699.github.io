@@ -279,34 +279,44 @@
 </body>
 <script>
     window.onload = function () {
-
-
-        if (window.innerWidth > 600) {
-            var buttons = document.getElementsByClassName('scroll-btn');
-            var maxWidth = 0;
-
-
-            for (var i = 0; i < buttons.length; i++) {
-                if (buttons[i].offsetWidth > maxWidth) {
-                    maxWidth = buttons[i].offsetWidth;
-                }
-            }
-
-            maxWidth += 5;
-
-
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].style.width = maxWidth + 'px';
-            }
-        }
-
-
-
+        window.addEventListener('resize', resizeButtons);
 
         setTimeout(function () {
             document.querySelector('.loading-overlay').style.display = 'none';
+            resizeButtons()
         }, 4000);
     };
+
+   function resizeButtons() {
+    var buttons = document.getElementsByClassName('scroll-btn');
+    var maxWidth = 0;
+
+    if (window.innerWidth > 600) {
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].offsetWidth > maxWidth) {
+                maxWidth = buttons[i].offsetWidth;
+            }
+        }
+
+        maxWidth += 5;
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.width = maxWidth + 'px';
+            buttons[i].style.fontSize = "100%"; 
+        }
+    } else {
+        maxWidth = window.innerWidth / 4 - 20;
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.maxWidth = maxWidth + 'px';
+            if (window.innerWidth < 430) {
+                buttons[i].style.fontSize = "70%"; 
+            } else {
+                buttons[i].style.fontSize = "100%"; 
+            }
+        }
+    }
+}
+
 
 
     document.getElementById('toggle-header').addEventListener('click', () => {
