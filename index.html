@@ -17,8 +17,20 @@
     </div>
 
     <!--  -->
-    <div class="container">
-        <h1 class="title">Get to know me</h1>
+
+    <div class="header">
+        <div class="button-container">
+            <button class="scroll-btn" data-target="aboutme">About me</button>
+            <button class="scroll-btn" data-target="SelfViews">Self-view</button>
+            <button class="scroll-btn" data-target="reviews-container">Others' view</button>
+            <button class="scroll-btn" data-target="nerdstuff">Nerd Stuff</button>
+        </div>
+        <button id="toggle-header">^</button>
+    </div>
+
+
+    <div id="aboutme" class="container">
+        <h1 class="titletwo">Budtholomew</h1>
         <div class="aboutme">
             <div class="aboutme-text-container">
                 <p>Hey, I'm Bud; I'm a programmer, game developer, and engineer. I'd say I am passionate about creating
@@ -55,12 +67,12 @@
             </form>
         </div>
         <br><br>
-        <h1> What do I think of myself? </h1>
+        <h1 id="SelfViews" class="SelfViews"> What do I think of myself? </h1>
         <p class="Me"> I'm the kind of person who's all about good vibes and making people smile. I love it when i can
             help someone out or just make their day a little brighter. Life's full of wonder; you just need to find
             them, right ? So, I always try to look on the brightside of things. Overall, I'd say I'm pretty chill.</p>
         <br>
-        <h2> Now for what other people think about me</h2>
+        <h2 id="reviews-container"> Now for what other people think about me</h2>
         <p> If you'd like to be on here, just message my discord saying what you think of me as a person</p>
         <div class="reviews-container">
             <!--
@@ -225,7 +237,7 @@
             </div>
 
         </div>
-        <h1> More nerd stuff </h1>
+        <h1 id="nerdstuff" class="nerdstuff"> More nerd stuff </h1>
         <div class="more-aboutme">
             <div class="Languages">
                 <div class="column-left">
@@ -266,10 +278,96 @@
 </body>
 <script>
     window.onload = function () {
+        var buttons = document.getElementsByClassName('scroll-btn');
+        var maxWidth = 0;
+
+
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].offsetWidth > maxWidth) {
+                maxWidth = buttons[i].offsetWidth;
+            }
+        }
+
+        if (window.innerWidth > 600) {
+            maxWidth += 5;
+        } else {
+            maxWidth -= 5; 
+        }
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.width = maxWidth + 'px';
+        }
+
+
         setTimeout(function () {
             document.querySelector('.loading-overlay').style.display = 'none';
-        }, 5000);
+        }, 4000);
     };
+
+
+    document.getElementById('toggle-header').addEventListener('click', () => {
+        const header = document.querySelector('.header');
+        const button = document.getElementById('toggle-header');
+        if (header.classList.contains('hidden')) {
+            header.classList.remove('hidden');
+            header.classList.add('shown');
+        } else if (header.classList.contains('shown')) {
+            header.classList.remove('shown');
+            header.classList.add('hidden');
+        } else {
+            header.classList.remove('shown');
+            header.classList.add('hidden');
+        }
+        button.classList.toggle('rotated');
+
+        if (buttons.classList.contains('hidden')) {
+            header.style.animation = 'slideButtonsOut 1s ease-in-out forwards';
+        } else {
+            header.style.animation = 'slideButtonsIn 1s ease-in-out forwards';
+        }
+    });
+
+
+
+    document.querySelectorAll('.scroll-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.getElementById(button.dataset.target);
+            let targetPosition;
+            if (window.matchMedia("(max-width: 600px)").matches) {
+                targetPosition = target.offsetTop;
+            } else {
+                targetPosition = target.offsetTop - 20;
+            }
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 2000;
+            let start = null;
+
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                window.scrollTo(0, easeOutQuad(progress, startPosition, distance, duration));
+                if (progress < duration) window.requestAnimationFrame(step);
+            }
+
+            function easeOutQuad(t, b, c, d) {
+                t /= d;
+                return -c * (t) * (t - 2) + b;
+            }
+
+            function easeInOutQuadNonSmooth(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            window.requestAnimationFrame(step);
+        });
+    });
+
+
 
     var username = localStorage.getItem('username');
     if (username) {

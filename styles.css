@@ -13,27 +13,30 @@ body {
     width: 130%;
     height: 130%;
     background-color: rgba(0, 0, 0, 0.8);
-    background-color: rgba(17,17,17,255);
-    
+    background-color: rgba(17, 17, 17, 255);
+
     display: flex;
     justify-content: center;
     align-items: center;
     animation: slideOut 1s ease-in-out forwards;
     animation-delay: 3s;
-    z-index: 1000
+    z-index: 2001;
 }
 
 .loading-overlay-shrink {
     animation: shrink 1s ease-in-out forwards;
     animation-delay: 2.2s;
 }
+
 @keyframes fadeOut {
     0% {
         opacity: 1;
     }
+
     95% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -95,7 +98,12 @@ body {
 }
 
 .title {
-    font-size:240%;
+    font-size: 240%;
+    padding-bottom: 0px;
+}
+
+.titletwo {
+    padding-top: 0px;
 }
 
 .aboutme {
@@ -144,6 +152,7 @@ p {
     color: #eee;
 
 }
+
 .Me {
     max-width: 60%;
 }
@@ -155,7 +164,7 @@ ul {
 
 .animated {
     animation: pulse 2s infinite alternate;
-    
+
 }
 
 @keyframes pulse {
@@ -213,16 +222,16 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
-    overflow: auto; 
+    flex-wrap: wrap;
+    overflow: auto;
 }
 
 .image-container img {
-    width: 200px; 
-    height: 200px; 
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 20px;
-    margin: 5px; 
+    margin: 5px;
 }
 
 
@@ -242,8 +251,8 @@ ul {
     animation-delay: 2.1s;
     animation: l5-0 3s steps(12);
     background:
-        linear-gradient(rgba(17,17,17,255) 0 0) 0 0/0% 100% no-repeat,
-        radial-gradient(circle 3px, #eeee89 90%, rgba(17,17,17,0)) 0 0/20% 100% rgba(17,17,17,255);
+        linear-gradient(rgba(17, 17, 17, 255) 0 0) 0 0/0% 100% no-repeat,
+        radial-gradient(circle 3px, #eeee89 90%, rgba(17, 17, 17, 0)) 0 0/20% 100% rgba(17, 17, 17, 255);
     overflow: hidden;
 }
 
@@ -285,45 +294,7 @@ ul {
     }
 }
 
-@media screen and (max-width: 600px) {
 
-    .aboutme,
-    .Languages {
-        flex-direction: column;
-    }
-    .image-container {
-        justify-content:center ;
-    }
-    .container{
-        margin-bottom: 5%;
-        padding: 10px;
-        max-width: 85%;
-    }
-    .aboutme {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        text-align: center; 
-        max-width: 95%;
-    }
-    .loading-overlay {
-        animation: fadeOut 3s ease-in-out forwards;
-        transform: scale(1.1);
-    }
-    .loading-overlay-shrink {
-        animation: fadeOut 3s ease-in-out forwards;
-        animation-delay: 2.2s;
-    }
-    .Me {
-        max-width: 90%;
-    }
-    .reviews-container {
-        flex-direction: column;
-    }
- 
-}
 
 .reviews-container {
     display: flex;
@@ -333,17 +304,18 @@ ul {
     padding: 10px;
     flex-wrap: wrap;
 }
+
 .review {
     background-color: #333;
-    color: #eee; 
+    color: #eee;
     padding: 15px;
-    margin: 10px; 
+    margin: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: left;
-    flex: 1; 
-    max-width: 300px; 
-    min-width: 250px; 
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
 }
 
 .review-name {
@@ -358,8 +330,8 @@ ul {
 }
 
 .more-info {
-    background-color: #333; 
-    color: #eee; 
+    background-color: #333;
+    color: #eee;
     padding: 15px;
     margin-top: 20px;
     border-radius: 5px;
@@ -379,7 +351,7 @@ ul {
 }
 
 .more-info a {
-    color: #4b8bf5; 
+    color: #4b8bf5;
     text-decoration: none;
 }
 
@@ -387,10 +359,10 @@ ul {
     text-decoration: underline;
 }
 
-#discordForm  {
+#discordForm {
     font-family: Arial, sans-serif;
     background-color: #222;
-    border-radius: 10px; 
+    border-radius: 10px;
     /*box-shadow: 0 2px 10px rgba(0,0,0,0.3);*/
     padding: 20px;
     max-width: 90%;
@@ -399,12 +371,14 @@ ul {
     width: 1000px;
 
 }
+
 #discordForm label {
     color: #eee;
     font-size: 16px;
     margin-bottom: 10px;
     display: block;
 }
+
 #discordForm input[type="text"] {
     width: 80%;
     min-width: 80%;
@@ -415,7 +389,8 @@ ul {
     border-radius: 5px;
     overflow-wrap: break-word;
 }
-#discordForm input[type="submit"]{
+
+#discordForm input[type="submit"] {
     cursor: pointer;
     padding: 10px 20px;
     color: black;
@@ -423,8 +398,9 @@ ul {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 #discordForm input[type="submit"]:hover {
-    background-color: #939494 ;
+    background-color: #939494;
 }
 
 #discordForm input[type="file"] {
@@ -452,6 +428,7 @@ ul {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .custom-file-upload:hover {
     background-color: #939494;
 }
@@ -464,4 +441,199 @@ ul {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+@keyframes slideInFromBottom  {
+    0% {
+        transform: translateY(100%);
+    }
+
+    70% {
+        transform: translateY(-20%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    70% {
+        transform: translateY(20%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes slideButtonsOut {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-90%);
+    }
+}
+
+@keyframes slideButtonsIn {
+    0% {
+        transform: translateY(-90%);
+       
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.header {
+    position: sticky;
+    top: 25px;
+    background-color: #282828;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: fit-content;
+    z-index: 1000;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: slideInFromTop 1s ease-in-out forwards;
+    animation-delay: 4s;
+    transform: translateY(-110%);
+    scale: 1.5;
+}
+
+.header.hidden {
+    animation: slideButtonsOut 1s ease-in-out forwards;
+}
+
+.header.shown {
+    animation: slideButtonsIn 1s ease-in-out forwards;
+}
+
+#toggle-header {
+    transition: transform 1s;
+    margin-top: 0px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: -10px;;
+}
+
+#toggle-header.rotated {
+    transform: rotate(180deg); 
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    width: fit-content;
+    padding: 0 10px;
+}
+
+.button-container button {
+    margin: 5px;
+    padding: 14px;
+    font-size: 11px;
+    border-radius: 5px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #777;
+}
+
+#toggle-header{
+    color: white;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .aboutme,
+    .Languages {
+        flex-direction: column;
+    }
+
+    .image-container {
+        justify-content: center;
+    }
+
+    .container {
+        margin-bottom: 5%;
+        padding: 10px;
+        max-width: 85%;
+    }
+
+    .aboutme {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 95%;
+    }
+
+    .loading-overlay {
+        animation: fadeOut 3s ease-in-out forwards;
+        transform: scale(1.1);
+    }
+
+    .loading-overlay-shrink {
+        animation: fadeOut 3s ease-in-out forwards;
+        animation-delay: 2.2s;
+    }
+
+    .Me {
+        max-width: 90%;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+    }
+
+    .header {
+        width: 90%;
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        animation: slideInFromBottom 1s ease-in-out forwards;
+        animation-delay: 3s;
+        transform: translateX(400%);
+
+
+        left: 0;
+        right: 0; 
+        margin-left: auto;
+        margin-right: auto; 
+        scale: 1;
+    }
+
+    .scroll-btn{
+        font-size: 100% !important;
+        width: fit-content;
+    }
+
+
+    #toggle-header {
+        display:none;
+    }
+
 }
