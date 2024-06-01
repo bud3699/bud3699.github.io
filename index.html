@@ -21,8 +21,8 @@
     <div class="header">
         <div class="button-container">
             <button class="scroll-btn" data-target="aboutme">About me</button>
-            <button class="scroll-btn" data-target="SelfViews">Self-view</button>
-            <button class="scroll-btn" data-target="reviews-container">Others' view</button>
+            <button class="scroll-btn" data-target="discordForm">Live Message</button>
+            <button class="scroll-btn" data-target="SelfViews">Thoughts on me </button>
             <button class="scroll-btn" data-target="nerdstuff">Nerd Stuff</button>
         </div>
         <button id="toggle-header">^</button>
@@ -52,7 +52,8 @@
         </div>
         <div class="aboutme">
             <form id="discordForm">
-                <label for="message">Leave me a message, And it will display next to me.</label><br>
+                <h1> Leave me a message </h1>
+                <label for="message"> And it will display next to me.</label><br>
                 <input type="text" id="username" name="username" oninput="adjustInput(this)"
                     placeholder="Username here"><br>
 
@@ -278,25 +279,28 @@
 </body>
 <script>
     window.onload = function () {
-        var buttons = document.getElementsByClassName('scroll-btn');
-        var maxWidth = 0;
 
 
-        for (var i = 0; i < buttons.length; i++) {
-            if (buttons[i].offsetWidth > maxWidth) {
-                maxWidth = buttons[i].offsetWidth;
+        if (window.innerWidth > 600) {
+            var buttons = document.getElementsByClassName('scroll-btn');
+            var maxWidth = 0;
+
+
+            for (var i = 0; i < buttons.length; i++) {
+                if (buttons[i].offsetWidth > maxWidth) {
+                    maxWidth = buttons[i].offsetWidth;
+                }
+            }
+
+            maxWidth += 5;
+
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].style.width = maxWidth + 'px';
             }
         }
 
-        if (window.innerWidth > 600) {
-            maxWidth += 5;
-        } else {
-            maxWidth -= 5; 
-        }
 
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].style.width = maxWidth + 'px';
-        }
 
 
         setTimeout(function () {
