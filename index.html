@@ -89,12 +89,24 @@
             <div class="review" id="Alfie">
                 <h2 class="review-name">Alfie</h2>
                 <p class="review-text">"Cures depression. Trust me."</p>
+                <!--
+                <div class="my-opinion">Alfie is my best friend and genuinly couldn't live without him, I think he is a
+                    great guy and i'm glad to know him.
+                    <span class="close-button">X</span>
+                </div>
+                -->
             </div>
             <div class="review" id="Fredbear">
                 <h2 class="review-name">Fredbear</h2>
                 <p class="review-text">"Youre a very kind person and are always helping where you can<br>
                     If you would’ve lived in Germany you would’ve been one of my friends in about 3 days<br>
                     Your personality is also very good. There’s not a single aspect on you that I don’t like"</p>
+                <!--
+                <div class="my-opinion">I've known Fredbear for a while now. A really nice guy to hang out with and he
+                    can take a joke!!
+                    <span class="close-button">X</span>
+                </div>
+                -->
             </div>
             <div class="review" id="Stefegra">
                 <h2 class="review-name">Stefegra</h2>
@@ -158,7 +170,7 @@
                 <p class="review-text">"I think you are kind of reserved and keep too much to yourself, but you're
                     wicked brilliant, extremely kind, and quite handsome."</p>
             </div>
-            <div class="review" id="RaeRae"> 
+            <div class="review" id="RaeRae">
                 <h2 class="review-name">RaeRae <br>(<a href="https://www.twitch.tv/gamerinlilspace">Twitch Streamer</a>)
                 </h2>
                 <p class="review-text">"i think you are very intellectual and thoughtful.<br> You've always had my back
@@ -176,13 +188,17 @@
                     Good friend<br>
                     A person that cares about others"</p>
             </div>
-            <div class="review"  id="Sonny">
+            <div class="review" id="Sonny">
                 <h2 class="review-name">Sonny</h2>
                 <p class="review-text">"Just a good man trying to get through life"</p>
             </div>
             <div class="review" id="Ava">
                 <h2 class="review-name">Ava</h2>
                 <p class="review-text">"I think you're an amazing person and that I love you dearly"</p>
+            </div>
+            <div class="review" id="Gianna">
+                <h2 class="review-name">Gianna</h2>
+                <p class="review-text">"You're a very kind hearted person and you care about people so much, you're an amazing person to talk to and give great advice"</p>
             </div>
             <div class="review" id="beanybitch">
                 <h2 class="review-name">.beaster</h2>
@@ -281,41 +297,68 @@
     window.onload = function () {
         window.addEventListener('resize', resizeButtons);
 
+        var closeButton = document.getElementsByClassName('close-button');
+
+        for (var i = 0; i < closeButton.length; i++) {
+            closeButton[i].addEventListener('click', function () {
+                this.parentElement.style.display = 'none';
+            });
+        }
+
+        var reviews = document.getElementsByClassName('review');
+
+
+        for (var i = 0; i < reviews.length; i++) {
+        reviews[i].addEventListener('mouseenter', function(e) {
+            var opinion = this.getElementsByClassName('my-opinion')[0];
+            var rect = this.getBoundingClientRect();
+            opinion.style.left = (e.pageX - rect.left) + 'px';
+            opinion.style.top = (e.pageY - rect.top) + 'px';
+            opinion.style.display = 'block';
+        });
+
+        reviews[i].addEventListener('mouseleave', function() {
+            var opinion = this.getElementsByClassName('my-opinion')[0];
+            opinion.style.display = 'none';
+        });
+    }
+
+
         setTimeout(function () {
             document.querySelector('.loading-overlay').style.display = 'none';
             resizeButtons()
         }, 4000);
     };
 
-   function resizeButtons() {
-    var buttons = document.getElementsByClassName('scroll-btn');
-    var maxWidth = 0;
+    function resizeButtons() {
+        var buttons = document.getElementsByClassName('scroll-btn');
+        var maxWidth = 0;
 
-    if (window.innerWidth > 600) {
-        for (var i = 0; i < buttons.length; i++) {
-            if (buttons[i].offsetWidth > maxWidth) {
-                maxWidth = buttons[i].offsetWidth;
+        if (window.innerWidth > 600) {
+            for (var i = 0; i < buttons.length; i++) {
+                if (buttons[i].offsetWidth > maxWidth) {
+                    maxWidth = buttons[i].offsetWidth;
+                }
             }
-        }
 
-        maxWidth += 5;
+            maxWidth += 5;
 
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].style.width = maxWidth + 'px';
-            buttons[i].style.fontSize = "100%"; 
-        }
-    } else {
-        maxWidth = window.innerWidth / 4 - 20;
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].style.maxWidth = maxWidth + 'px';
-            if (window.innerWidth < 430) {
-                buttons[i].style.fontSize = "70%"; 
-            } else {
-                buttons[i].style.fontSize = "100%"; 
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].style.width = maxWidth + 'px';
+                buttons[i].style.fontSize = "100%";
+            }
+        } else {
+            maxWidth = window.innerWidth / 4 - 20;
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].style.maxWidth = maxWidth + 'px';
+                if (window.innerWidth < 430) {
+                    buttons[i].style.fontSize = "70%";
+                } else {
+                    buttons[i].style.fontSize = "100%";
+                }
             }
         }
     }
-}
 
 
 

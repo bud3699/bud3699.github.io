@@ -568,6 +568,35 @@ ul {
     margin-top: 50px;
 }
 
+.my-opinion {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 300px; 
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.review:hover .my-opinion {
+    display: block;
+}
+
+.close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 
 @media screen and (max-width: 600px) {
 
