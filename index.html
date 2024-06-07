@@ -66,6 +66,12 @@
                 <img id="preview" src="#" alt="Image preview..." style="display: none;"><br>
                 <input type="submit" value="Send">
             </form>
+
+        </div>
+        <div id="podium">
+            <div class="place" id="first"></div>
+            <div class="place" id="second"></div>
+            <div class="place" id="third"></div>
         </div>
         <br><br>
         <h1 id="SelfViews" class="SelfViews"> What do I think of myself? </h1>
@@ -198,7 +204,8 @@
             </div>
             <div class="review" id="Gianna">
                 <h2 class="review-name">Gianna</h2>
-                <p class="review-text">"You're a very kind hearted person and you care about people so much, you're an amazing person to talk to and give great advice"</p>
+                <p class="review-text">"You're a very kind hearted person and you care about people so much, you're an
+                    amazing person to talk to and give great advice"</p>
             </div>
             <div class="review" id="beanybitch">
                 <h2 class="review-name">.beaster</h2>
@@ -291,10 +298,13 @@
                 for more projects and code snippets.</p>
             <p>If you want to chat or collaborate, feel free to contact me on Discord at <strong>bud3699</strong>.</p>
         </div>
+
     </div>
 </body>
 <script>
     window.onload = function () {
+        leaderboardRefresh()
+        adjustPodiumHeight();
         window.addEventListener('resize', resizeButtons);
 
         var closeButton = document.getElementsByClassName('close-button');
@@ -309,26 +319,158 @@
 
 
         for (var i = 0; i < reviews.length; i++) {
-        reviews[i].addEventListener('mouseenter', function(e) {
-            var opinion = this.getElementsByClassName('my-opinion')[0];
-            var rect = this.getBoundingClientRect();
-            opinion.style.left = (e.pageX - rect.left) + 'px';
-            opinion.style.top = (e.pageY - rect.top) + 'px';
-            opinion.style.display = 'block';
-        });
+            reviews[i].addEventListener('mouseenter', function (e) {
+                var opinion = this.getElementsByClassName('my-opinion')[0];
+                var rect = this.getBoundingClientRect();
+                opinion.style.left = (e.pageX - rect.left) + 'px';
+                opinion.style.top = (e.pageY - rect.top) + 'px';
+                opinion.style.display = 'block';
+            });
 
-        reviews[i].addEventListener('mouseleave', function() {
-            var opinion = this.getElementsByClassName('my-opinion')[0];
-            opinion.style.display = 'none';
-        });
-    }
+            reviews[i].addEventListener('mouseleave', function () {
+                var opinion = this.getElementsByClassName('my-opinion')[0];
+                opinion.style.display = 'none';
+            });
+        }
 
 
         setTimeout(function () {
             document.querySelector('.loading-overlay').style.display = 'none';
             resizeButtons()
+            adjustPodiumHeight()
         }, 4000);
     };
+
+    function getPodiumHeights() {
+        var thirdPlace = document.getElementById("third");
+        var secondPlace = document.getElementById("second");
+        var firstPlace = document.getElementById("first");
+
+        thirdPlace.style.height = "auto";
+        secondPlace.style.height = "auto";
+        firstPlace.style.height = "auto";
+
+        var thirdPlaceHeight = thirdPlace.scrollHeight;
+        var secondPlaceHeight = secondPlace.scrollHeight;
+        var firstPlaceHeight = firstPlace.scrollHeight;
+
+        return {
+            thirdPlaceHeight: thirdPlaceHeight,
+            secondPlaceHeight: secondPlaceHeight,
+            firstPlaceHeight: firstPlaceHeight
+        };
+    }
+
+
+    function adjustPodiumHeight() {
+        var thirdPlace = document.getElementById("third");
+        var secondPlace = document.getElementById("second");
+        var firstPlace = document.getElementById("first");
+        var podiumHeights = getPodiumHeights();
+
+        if ((podiumHeights.secondPlaceHeight - 50) > podiumHeights.thirdPlaceHeight) {
+            if ((podiumHeights.firstPlaceHeight - 50) > podiumHeights.secondPlaceHeight) {
+                firstPlace.style.height = podiumHeights.firstPlaceHeight;
+                secondPlace.style.height = (podiumHeights.firstPlaceHeight - 50) + "px";
+                thirdPlace.style.height = (podiumHeights.firstPlaceHeight - 100) + "px";
+            } else {
+                firstPlace.style.height = (podiumHeights.secondPlaceHeight + 50) + "px";
+                secondPlace.style.height = podiumHeights.secondPlaceHeight + "px";
+                thirdPlace.style.height = (podiumHeights.secondPlaceHeight - 50) + "px";
+            }
+        } else {
+            if ((podiumHeights.thirdPlaceHeight + 100) > podiumHeights.firstPlaceHeight) {
+                firstPlace.style.height = (podiumHeights.thirdPlaceHeight + 100) + "px";
+                secondPlace.style.height = (podiumHeights.thirdPlaceHeight + 50) + "px";
+                thirdPlace.style.height = podiumHeights.thirdPlaceHeight + "px";
+            } else {
+                firstPlace.style.height = podiumHeights.firstPlaceHeight + "px";
+                secondPlace.style.height = (podiumHeights.firstPlaceHeight - 50) + "px";
+                thirdPlace.style.height = (podiumHeights.firstPlaceHeight - 100) + "px";
+
+            }
+
+        }
+
+    }
+
+
+
+    function leaderboardRefresh() {
+        var url = "http://budstesting.rf.gd/store/leaderboard.json";
+        var corsProxy = "https://corsproxy.io/?";
+
+        url += "?t=" + new Date().getTime();
+
+        fetch(corsProxy + url)
+            .then(response => response.json())
+            .then(data => {
+                var entries = Object.entries(data);
+                entries.sort((a, b) => b[1] - a[1]);
+
+                var places = ["first", "second", "third"];
+                var currentPlace = [];
+                var index = 0;
+                var podiumPlaces = {};
+
+                for (var i = 0; i < entries.length; i++) {
+                    if (currentPlace.length > 0 && entries[i][1] !== currentPlace[0][1]) {
+                        podiumPlaces[places[index]] = createPlace(places[index], currentPlace);
+                        currentPlace = [];
+                        index++;
+                    }
+                    if (index >= places.length) {
+                        break;
+                    }
+                    currentPlace.push(entries[i]);
+                }
+                if (currentPlace.length > 0 && index < places.length) {
+                    podiumPlaces[places[index]] = createPlace(places[index], currentPlace);
+                }
+
+                var podium = document.getElementById("podium");
+                podium.innerHTML = '';
+                podium.appendChild(podiumPlaces['second']);
+                podium.appendChild(podiumPlaces['first']);
+                podium.appendChild(podiumPlaces['third']);
+            });
+    }
+
+    window.addEventListener("resize", adjustPodiumHeight);
+    setInterval(adjustPodiumHeight, 10000);
+
+    function createPlace(place, entries) {
+        var div = document.createElement("div");
+        div.id = place;
+        div.className = "place";
+
+        var namesDiv = document.createElement("div");
+        namesDiv.className = "names";
+        entries.forEach(entry => {
+            var name = document.createElement("div");
+            name.className = "name";
+            name.textContent = entry[0];
+            namesDiv.appendChild(name);
+        });
+        div.appendChild(namesDiv);
+
+        var score = document.createElement("div");
+        score.className = "score";
+        score.textContent = entries[0][1];
+        div.appendChild(score);
+
+        return div;
+    }
+
+
+
+
+
+
+
+
+
+
 
     function resizeButtons() {
         var buttons = document.getElementsByClassName('scroll-btn');
@@ -488,6 +630,8 @@
         };
         reader.readAsDataURL(event.target.files[0]);
     });
+
+
 </script>
 
 
