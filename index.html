@@ -434,10 +434,13 @@
                 podium.appendChild(podiumPlaces['first']);
                 podium.appendChild(podiumPlaces['third']);
             });
+            adjustPodiumHeight();
     }
 
     window.addEventListener("resize", adjustPodiumHeight);
+    window.addEventListener("resize", leaderboardRefresh);
     setInterval(adjustPodiumHeight, 10000);
+    setInterval(leaderboardRefresh, 10000);
 
     function createPlace(place, entries) {
         var div = document.createElement("div");
@@ -461,15 +464,6 @@
 
         return div;
     }
-
-
-
-
-
-
-
-
-
 
 
     function resizeButtons() {
@@ -620,6 +614,7 @@
                 document.getElementById('preview').style.display = 'none';
             })
             .catch(error => console.error('Error:', error));
+            leaderboardRefresh
     });
 
     document.getElementById('image').addEventListener('change', function (event) {
