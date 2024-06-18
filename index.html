@@ -54,6 +54,8 @@
             <form id="discordForm">
                 <h1> Leave me a message </h1>
                 <label for="message"> And it will display next to me.</label><br>
+
+
                 <input type="text" id="username" name="username" oninput="adjustInput(this)"
                     placeholder="Username here"><br>
 
@@ -66,6 +68,14 @@
                 <img id="preview" src="#" alt="Image preview..." style="display: none;"><br>
                 <input type="submit" value="Send">
             </form>
+            <div style="margin-bottom: 40px;">
+                <p>If you're going to spam, then please use the spamming leaderboard so you don't clog up my leave
+                    me a message section.</p>
+                <a href="https://bud.is-a.dev/spam/" style="text-decoration: none;">
+                    <button class="spamming-leaderboard-button">Go to Spamming Leaderboard</button>
+                </a>
+
+            </div>
 
         </div>
         <div id="podium">
@@ -433,8 +443,11 @@
                 podium.appendChild(podiumPlaces['second']);
                 podium.appendChild(podiumPlaces['first']);
                 podium.appendChild(podiumPlaces['third']);
+
+                adjustPodiumHeight();
             });
-            adjustPodiumHeight();
+
+
     }
 
     window.addEventListener("resize", adjustPodiumHeight);
@@ -614,7 +627,7 @@
                 document.getElementById('preview').style.display = 'none';
             })
             .catch(error => console.error('Error:', error));
-            leaderboardRefresh
+        leaderboardRefresh
     });
 
     document.getElementById('image').addEventListener('change', function (event) {

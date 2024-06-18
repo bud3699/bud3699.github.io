@@ -443,7 +443,7 @@ ul {
     margin-right: auto;
 }
 
-@keyframes slideInFromBottom  {
+@keyframes slideInFromBottom {
     0% {
         transform: translateY(100%);
     }
@@ -477,6 +477,7 @@ ul {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(-90%);
     }
@@ -485,8 +486,9 @@ ul {
 @keyframes slideButtonsIn {
     0% {
         transform: translateY(-90%);
-       
+
     }
+
     100% {
         transform: translateY(0);
     }
@@ -527,11 +529,12 @@ ul {
     background: none;
     border: none;
     cursor: pointer;
-    margin-bottom: -10px;;
+    margin-bottom: -10px;
+    ;
 }
 
 #toggle-header.rotated {
-    transform: rotate(180deg); 
+    transform: rotate(180deg);
 }
 
 
@@ -558,7 +561,7 @@ ul {
     background-color: #777;
 }
 
-#toggle-header{
+#toggle-header {
     color: white;
 }
 
@@ -577,7 +580,7 @@ ul {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     width: 80%;
-    max-width: 300px; 
+    max-width: 300px;
     animation: fadeIn 1s ease-in-out forwards;
 }
 
@@ -593,8 +596,13 @@ ul {
 }
 
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 
@@ -654,13 +662,13 @@ ul {
 
 
         left: 0;
-        right: 0; 
+        right: 0;
         margin-left: auto;
-        margin-right: auto; 
+        margin-right: auto;
         scale: 1;
     }
 
-    .scroll-btn{
+    .scroll-btn {
         width: fit-content;
         white-space: normal;
         max-width: 100px;
@@ -668,8 +676,9 @@ ul {
 
 
     #toggle-header {
-        display:none;
+        display: none;
     }
+
     #aboutme {
         margin-bottom: 100px;
     }
@@ -691,14 +700,17 @@ ul {
 }
 
 /* Style the table cells */
-#leaderboard td, #leaderboard th {
+#leaderboard td,
+#leaderboard th {
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
 }
 
 /* Add a hover effect to the rows */
-#leaderboard tr:not(:first-child):hover {background-color: #f5f5f5;}
+#leaderboard tr:not(:first-child):hover {
+    background-color: #f5f5f5;
+}
 
 /* Add some padding and center the text in the first column (position) */
 #leaderboard tr td:first-child {
@@ -707,9 +719,21 @@ ul {
 }
 
 /* Highlight the top 3 rows */
-#leaderboard tr:nth-child(2) {background-color: gold;} /* 1st place */
-#leaderboard tr:nth-child(3) {background-color: silver;} /* 2nd place */
-#leaderboard tr:nth-child(4) {background-color: #cd7f32;} /* 3rd place */
+#leaderboard tr:nth-child(2) {
+    background-color: gold;
+}
+
+/* 1st place */
+#leaderboard tr:nth-child(3) {
+    background-color: silver;
+}
+
+/* 2nd place */
+#leaderboard tr:nth-child(4) {
+    background-color: #cd7f32;
+}
+
+/* 3rd place */
 
 #leaderboard tr {
     transition: background-color 0.3s ease;
@@ -721,14 +745,14 @@ ul {
 }
 
 #leaderboard {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 #podium {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: auto; /* make the height of the podium flexible */
+    height: auto;
 }
 
 .place {
@@ -736,7 +760,7 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     width: 100px;
-    height: auto; /* make the height of the boxes flexible */
+    height: auto;
     margin: 0 10px;
     text-align: center;
     color: white;
@@ -773,20 +797,84 @@ ul {
     background-color: #cd7f32;
 }
 
-.spamming-leaderboard-button {
-    background-color: #a94442; /* A darker shade of red */
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s;
+.Messagesclass {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+
 }
 
-.spamming-leaderboard-button:hover {
-    background-color: #843534; /* A slightly darker shade for hover effect */
+#messageList {
+    width: 100%;
+
+}
+
+.message {
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px auto;
+
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: rgba(21,21,22,1);
+    color: white;
+}
+
+.author {
+    align-self: flex-start;
+    font-size: large;
+    font-size-adjust: initial + 5;
+    font-weight: bold;
+}
+
+.timestamp {
+    align-self: flex-end;
+    color: grey;
+    font-size: small;
+}
+
+.content {
+    text-align: center;
+    width: 80%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.return-button:hover {
+    background-color: #f8f8f8;
+}
+
+#aboutme .Messagesclass {
+    max-width: 100%; 
+    box-sizing: border-box; 
+}
+
+#aboutme .Messagesclass {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message {
+    animation: slideDown 0.5s ease-out forwards;
 }
