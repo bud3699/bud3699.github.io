@@ -509,7 +509,7 @@ ul {
     animation: slideInFromTop 1s ease-in-out forwards;
     animation-delay: 4s;
     transform: translateY(-110%);
-    scale: 1.5;
+    scale: 1;
 }
 
 .header.hidden {
