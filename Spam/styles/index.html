@@ -595,12 +595,10 @@
         function getContrastColor(hexColor) {
             // Convert hex color to RGB
             const rgb = hexToRgb(hexColor);
-            if (!rgb) return '#000'; // Return black if invalid color
+            if (!rgb) return '#000'; 
 
-            // Calculate the relative luminance
             const luminance = (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
 
-            // Return white or black based on the luminance
             return luminance > 0.5 ? '#000' : '#fff';
         }
 
