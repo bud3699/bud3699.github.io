@@ -18,7 +18,7 @@
 
     <!--  -->
 
-    <div class="header">
+    <div id="button-header" class="header">
         <div class="button-container">
             <button class="scroll-btn" data-target="aboutme">About me</button>
             <button class="scroll-btn" data-target="discordForm">Live Message</button>
@@ -312,6 +312,18 @@
     </div>
 </body>
 <script>
+    var username = localStorage.getItem('username');
+    mainWindows = document.getElementById("aboutme");
+    buttonHeader = document.getElementById("button-header");
+    if (username) {
+        document.getElementById('username').value = username;
+    }
+    if (username === 'lauren'){
+        mainWindows.style.display = "none";
+        buttonHeader.style.display = "none";
+        alert("An error has occured while loading the site")
+    }
+
     window.onload = function () {
         leaderboardRefresh()
         adjustPodiumHeight();
@@ -575,10 +587,7 @@
 
 
 
-    var username = localStorage.getItem('username');
-    if (username) {
-        document.getElementById('username').value = username;
-    }
+
 
     function adjustInput(input) {
         input.style.width = ((input.value.length) * 7) + 'px';
