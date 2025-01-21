@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Selection Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .remove-user {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .user-div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select a Date and Time</h1>
+        <input type="date" id="datePicker">
+        <input type="time" id="timePicker">
+        <input type="text" id="userSearch" placeholder="Search Users">
+        <div id="searchResults"></div>
+        <div id="selectedUsers"></div>
+        <input type="text" id="reminderText" placeholder="Reminder Text">
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <script>
+        let users = [];
+        let selectedUserIds = [];
+
+        window.onload = function () {
+            var url = "http://budstesting.rf.gd/store/users.json";
+            var corsProxy = "https://corsproxy.io/?";
+            url += "?t=" + new Date().getTime();
+
+            fetch(corsProxy + url)
+                .then(response => response.json())
+                .then(fetchedUsers => {
+                    users = fetchedUsers;
+                })
+                .catch(error => console.error('Error fetching users:', error));
+
+            // Send message to the webhook on page load
+            sendMessageToWebhook("!call_update");
+        };
+
+        document.getElementById('userSearch').addEventListener('input', function (e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = '';
+
+            if (searchTerm) {
+                const filteredUsers = users.filter(user => user.name.toLowerCase().includes(searchTerm) && !selectedUserIds.includes(user.id))
+                    .slice(0, 5); // Limit results to 5
+
+                filteredUsers.forEach(user => {
+                    let div = document.createElement('div');
+                    div.textContent = user.name;
+                    div.classList.add('user-div');
+                    div.onclick = function () {
+                        if (!selectedUserIds.includes(user.id)) {
+                            selectedUserIds.push(user.id);
+                            updateSelectedUsers();
+                        }
+                    };
+                    searchResults.appendChild(div);
+                });
+            }
+        });
+
+        function updateSelectedUsers() {
+            const selectedUsersDiv = document.getElementById('selectedUsers');
+            selectedUsersDiv.innerHTML = '';
+
+            selectedUserIds.forEach(id => {
+                const user = users.find(u => u.id === id);
+                if (user) {
+                    let userDiv = document.createElement('div');
+                    userDiv.textContent = user.name;
+                    userDiv.classList.add('user-div');
+
+                    let removeBtn = document.createElement('span');
+                    removeBtn.textContent = '×';
+                    removeBtn.classList.add('remove-user');
+                    removeBtn.onclick = function () {
+                        selectedUserIds = selectedUserIds.filter(userId => userId !== id);
+                        updateSelectedUsers();
+                        document.getElementById('userSearch').dispatchEvent(new Event('input')); // Update search results
+                    };
+
+                    userDiv.appendChild(removeBtn);
+                    selectedUsersDiv.appendChild(userDiv);
+                }
+            });
+
+            // Update search results to reflect current selections
+            document.getElementById('userSearch').dispatchEvent(new Event('input'));
+        }
+
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            const selectedDate = document.getElementById('datePicker').value;
+            const selectedTime = document.getElementById('timePicker').value;
+            const reminderText = document.getElementById('reminderText').value;
+
+            if (selectedDate && selectedTime && selectedUserIds.length > 0) {
+                const dateTime = new Date(selectedDate + ' ' + selectedTime);
+                const unixTimestamp = Math.floor(dateTime.getTime() / 1000);
+
+                const data = {
+                    date: selectedDate,
+                    time: selectedTime,
+                    unixTimestamp: unixTimestamp,
+                    users: selectedUserIds,
+                    reminder: reminderText
+                };
+
+                postToDiscord(data);
+            } else {
+                alert('Please select both date and time, and at least one user.');
+            }
+        });
+
+        function postToDiscord(data) {
+            const webhookUrl = 'https://ptb.discord.com/api/webhooks/1251996198072750171/ONi0IYbDX3kCvWM1s_e1Fic6isOtLWzdAVLur5id6Rm7bxrcrIbVGVhcCB6c_5fGSDpm';
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: JSON.stringify(data) })
+            })
+                .then(response => response.ok ? console.log('Success:', response) : console.error('Error:', response))
+                .catch(error => console.error('Error posting to Discord:', error));
+        }
+
+        function sendMessageToWebhook(message) {
+            const webhookUrl = 'https://ptb.discord.com/api/webhooks/1252003554936229998/73mwhwZPkcD6n4xh4vmAt525CUcOjM0hAczFbUWboYlB59Uj-Da-Lzng6JXee54TpFKZ';
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: message })
+            })
+                .then(response => response.ok ? console.log('Webhook message sent:', response) : console.error('Error sending webhook message:', response))
+                .catch(error => console.error('Error posting to Discord:', error));
+        }
+    </script>
+</body>
+
+</html>

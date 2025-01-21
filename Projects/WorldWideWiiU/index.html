@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play your wii U anywhere in the world through a website, with rebind controller support, video support, motion controls">
+    <title>World Wide Wii U</title>
+        <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="hero">
+        <div class="hero-content">
+            <h1>World Wide Wii U</h1>
+            <p>Making it possible to play your own real wii u from anywhere</p><br>
+            <button class="return-button" onclick="window.location.href='../../'">Go back</button>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About the Project</h2>
+            <p>
+                This is a project I started as a proof of concept kind of deal, I started working on it, then put it to the side until mid 2024 where I came back to try and build on it, making designs look nicer, better video latency, writing my own audio proccesor to get audio latency as little as possible. Adding touch screen/mobile support, adding nunchuck support and adding motion controller support to make the experience just that bit better to be the cherry on top. <br><br> The below screenshot is from 250 miles away from my wii u<br><br>I'm hoping that whatever i can make out of this will catch the eye of people who have one laying around and thing "hey this is a cool project, let me donate to help keep it going", I'm just doing what i love to do but to get recognision from what I do would be a dream come true.<Br><br>
+
+                <img src="images/Screenshot.png" alt="Screenshot from 250 miles away">
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section 
+    <section id="features" class="section-alt">
+        <div class="container">
+            <h2>Features</h2>
+            <ul>
+                <li>Full control of the Disney Infinity Base LEDs and sensors</li>
+                <li>Open-source integration using <code>libusb</code></li>
+                <li>Seamless integration with Unreal Engine</li>
+                <li>Cross-platform support</li>
+            </ul>
+        </div>
+    </section>-->
+
+    <!-- Demonstration Section       //When its finished
+    <section id="demo" class="section">
+        <div class="container">
+            <h2>Demonstration</h2>
+            <p>Watch the Infinity Base in action:</p>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>-->
+
+    <!-- Progress Section -->
+    <section id="progress" class="section-alt">
+        <div class="container">
+            <h2>Progress Updates</h2>
+            <div id="progress-content">
+                <!-- Progress updates will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Infinity Base Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressContainer = document.getElementById('progress-content');
+
+            const jsonFilePath = 'progress.json';
+
+            fetch(jsonFilePath)
+                .then(response => response.json())
+                .then(data => {
+                    data.updates.forEach(update => {
+                        const updateElement = document.createElement('div');
+                        updateElement.classList.add('progress-update');
+
+                        updateElement.innerHTML = `
+                            <h3>${update.title}</h3>
+                            <p><strong>Date:</strong> ${update.date} | <strong>Time:</strong> ${update.time}</p>
+                            <p>${update.text}</p>
+                            ${update.image ? `<img src="${update.image}" alt="Progress Image">` : ''}
+                            ${update.video ? `<video controls src="${update.video}"></video>` : ''}
+                        `;
+
+                        progressContainer.appendChild(updateElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching progress updates:', error);
+                    progressContainer.innerHTML = '<p>Failed to load progress updates. Please try again later.</p>';
+                });
+        });
+    </script>
+</body>
+</html>

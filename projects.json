@@ -1,0 +1,53 @@
+{
+    "projects": [
+      {
+        "title": "Infinity Base UE",
+        "description": "An unreal engine pack i'm creating to interface with disney infinity portal.",
+        "link": "Projects/InfinityBaseUe",
+        "image": "images/UnrealEngineInfinityPortal.png"
+      },
+      {
+        "title": "Buds Edid Database",
+        "description": "One of the largest EDID databases with Unique displays only (No duplicates to save on server speed/processing)",
+        "link": "https://edid.mikethetech.com/",
+        "image": "../Images/EdidDatabase.png"
+      },
+      {
+        "title": "World Wide Wii U",
+        "description": "A website which allows you to play your Wii U from anywhere around the world.",
+        "link": "Projects/WorldWideWiiU",
+        "image": "../Images/WiiU.png"
+      },
+      {
+        "title": "VRCade",
+        "description": "A game i'm developing to be a mutliplayer vr arcade game where you can join Arcade lobbies with your friends and play games",
+        "link": "Projects/VRCade",
+        "image": "../Images/VRCade.png"
+      },
+      {
+        "title": "Polygone",
+        "description": "A game developed with MikeTheTech, available on Steam.",
+        "link": "https://store.steampowered.com/app/2281200/Polygone/",
+        "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2281200/library_600x900_2x.jpg"
+      },
+      {
+        "title": "My github",
+        "description": "Just to see all my other projects that i didnt put here.",
+        "link": "#",
+        "image": "https://private-user-images.githubusercontent.com/75859057/377265968-344afa87-1a73-4b1e-9fc9-e87e375b4e83.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzY4NTU1MDMsIm5iZiI6MTczNjg1NTIwMywicGF0aCI6Ii83NTg1OTA1Ny8zNzcyNjU5NjgtMzQ0YWZhODctMWE3My00YjFlLTlmYzktZTg3ZTM3NWI0ZTgzLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMTQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTE0VDExNDY0M1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUzNWQwMTIyNTYxNDBmN2JjMmRjODQzYmI3YzI5Mzc0MzIxODY5MzZmNjVkMTZmOGE1YjhkOTQ2ZDhhODU3NWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.b12MpwP3y6I6mO09jNXw3q4gtbdrSJ_Wb78k-lbWgRk"
+      },
+      {
+        "title": "This website",
+        "description": "Well technically this is/was a project??",
+        "link": "#",
+        "image": "../Images/WebsiteSeption.png"
+      },
+      {
+        "title": "Game Mods",
+        "description": "Mods for Subnautica, Minecraft (Java & Bedrock), Rust, and Unity games.",
+        "link": "#",
+        "image": "images/game-mods.jpg"
+      }
+    ]
+  }
+  

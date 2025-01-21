@@ -1,0 +1,207 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #eaeaea;
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Center Text Utility */
+.center-text {
+    text-align: center;
+}
+
+/* Header */
+header#hero {
+    background: linear-gradient(135deg, #333, #1a1a1a);
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 4px solid #444;
+}
+
+header#hero .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+header#hero .hero-content p {
+    font-size: 1.5rem;
+}
+
+/* Section Styles */
+section {
+    margin: 4rem 0;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem 0;
+    color: #fff;
+    border-bottom: 2px solid #444;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+/* About Section */
+#about .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #292929, #222);
+    border: 1px solid #333;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Progress Section */
+#progress-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.progress-update {
+    background: linear-gradient(135deg, #292929, #222);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.progress-update:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+.progress-update h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.progress-update p {
+    margin-bottom: 1rem;
+    color: #bbb;
+}
+
+.progress-update img,
+.progress-update video {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #444;
+    box-shadow: 0 4px 10px rgba(70, 217, 255, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.progress-update img:hover,
+.progress-update video:hover {
+    box-shadow: 0 6px 15px rgba(70, 217, 255, 0.5);
+}
+
+.container img,
+.container video {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #444;
+    box-shadow: 0 4px 10px rgba(70, 217, 255, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.container img:hover,
+.container video:hover {
+    box-shadow: 0 6px 15px rgba(70, 217, 255, 0.5);
+}
+
+
+/* Demonstration Section */
+iframe {
+    width: 100%;
+    max-width: 720px;
+    height: 405px;
+    border-radius: 10px;
+    border: 2px solid #444;
+    box-shadow: 0 4px 10px rgba(70, 217, 255, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1a1a1a, #121212);
+    border-top: 2px solid #333;
+    color: #bbb;
+}
+
+footer a {
+    color: #46d9ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #1cb6e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header#hero {
+        padding: 2rem 1rem;
+    }
+
+    header#hero .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    header#hero .hero-content p {
+        font-size: 1rem;
+    }
+
+    iframe {
+        height: 250px;
+    }
+}
+
+
+
+
+.return-button {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    border: 1px solid #444;
+    color: #eaeaea;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.return-button:hover {
+    background-color: #292929;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+

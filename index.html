@@ -4,659 +4,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bud's Portfolio - Programmer, Game Developer, Engineer">
     <title>Budtholomew</title>
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 </head>
 
 <body>
-    <!--  -->
-    <div class="loading-overlay">
-        <div class="loading-overlay-shrink">
-            <div class="loader"></div>
+    <header id="hero">
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#donate">Donate</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Budtholomew</h1>
+            <p>Programmer | Game Developer | Engineer | Reverse Engineering Enthusiast</p>
         </div>
-    </div>
+    </header>
 
-    <!--  -->
-
-    <div id="button-header" class="header">
-        <div class="button-container">
-            <button class="scroll-btn" data-target="aboutme">About me</button>
-            <button class="scroll-btn" data-target="discordForm">Live Message</button>
-            <button class="scroll-btn" data-target="SelfViews">Thoughts on me </button>
-            <button class="scroll-btn" data-target="nerdstuff">Nerd Stuff</button>
-        </div>
-        <button id="toggle-header">^</button>
-    </div>
-
-
-    <div id="aboutme" class="container">
-        <h1 class="titletwo">Budtholomew</h1>
-        <div class="aboutme">
-            <div class="aboutme-text-container">
-                <p>Hey, I'm Bud; I'm a programmer, game developer, and engineer. I'd say I am passionate about creating
-                    innovative solutions, but I also like to have a bit of fun. I'm a self taught developer with tons of
-                    reverse engineering experience with x64dbg, ghidra, and more. I've developed mods for Subnautica,
-                    Minecraft (Both Java and bedrock), and Rust. I've also reprogrammed a ton of Unity games assembly C#
-                    in order to unlock certain features or modify gameplay. </p>
-                <p> I'm a developer of the game <a
-                        href="https://store.steampowered.com/app/2281200/Polygone/">polygone</a>, where I work for the
-                    youtuber <a href="https://www.youtube.com/@MikeTheTech"> MikeTheTech</a> </p>
-                <p> Currently, I am working on <a href="https://github.com/itsmikethetech/Virtual-Display-Driver"> MTT
-                        virtual display driver </a></p><br><br>
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Hey, I'm Bud. I'm a programmer, game developer, and engineer passionate about creating innovative
+                    solutions while having fun. I'm self-taught with extensive experience in reverse engineering using
+                    tools like x64dbg, Ghidra, IL2CPP and DNSpy . I've developed mods for Subnautica, Minecraft (Java &
+                    Bedrock), and
+                    Rust. I enjoy modifying Unity games' C# assemblies to unlock features or tweak gameplay or just in
+                    general explore the games creation.</p><br>
+                <!--<p>I'm also a developer of the game <a href="https://store.steampowered.com/app/2281200/Polygone/"
+                        target="_blank">Polygone</a>, collaborating with YouTuber <a
+                        href="https://www.youtube.com/@MikeTheTech" target="_blank">MikeTheTech</a>-->
+                <p>I'm all about good vibes, helping others, and finding wonder in life's simple moments. I strive to
+                    stay chill and make the best of every situation.</p>
             </div>
-        </div>
-        <div class="image-container">
-            <img src="https://github.com/bud3699/bud3699/blob/main/Images/IMG_0206.jpg?raw=true" alt="Image 2">
-            <img src="https://github.com/bud3699/bud3699/blob/main/Images/gifWave.gif?raw=true" alt="Image 1">
-            <img src="https://github.com/bud3699/bud3699/blob/main/Images/IMG_0577.jpg?raw=true" alt="Image 3">
-        </div>
-        <div class="aboutme">
-            <form id="discordForm">
-                <h1> Leave me a message </h1>
-                <label for="message"> And it will display next to me.</label><br>
+        </section>
 
 
-                <input type="text" id="username" name="username" oninput="adjustInput(this)"
-                    placeholder="Username here"><br>
-
-                <input type="text" id="message" name="message" oninput="adjustInput(this)"
-                    placeholder="Comment here"><br>
-                <div style="text-align: center;">
-                    <label for="image" class="custom-file-upload">Click me to upload an image</label>
-                    <input type="file" id="image" name="image" accept="image/*" style="display: none;">
-                </div><br>
-                <img id="preview" src="#" alt="Image preview..." style="display: none;"><br>
-                <input type="submit" value="Send">
-            </form>
-            
-
-        </div>
-        <div style="margin-bottom: 40px;">
-            <p>If you're going to spam, then please use the spamming leaderboard so you don't clog up my leave
-                me a message section.</p>
-            <a href="https://bud.is-a.dev/spam/" style="text-decoration: none;">
-                <button class="spamming-leaderboard-button">Go to Spamming Leaderboard</button>
-            </a>
-
-        </div>
-        <div id="podium">
-            <div class="place" id="first"></div>
-            <div class="place" id="second"></div>
-            <div class="place" id="third"></div>
-        </div>
-        <br><br>
-        <h1 id="SelfViews" class="SelfViews"> What do I think of myself? </h1>
-        <p class="Me"> I'm the kind of person who's all about good vibes and making people smile. I love it when i can
-            help someone out or just make their day a little brighter. Life's full of wonder; you just need to find
-            them, right ? So, I always try to look on the brightside of things. Overall, I'd say I'm pretty chill.</p>
-        <br>
-        <h2 id="reviews-container"> Now for what other people think about me</h2>
-        <p> If you'd like to be on here, just message my discord saying what you think of me as a person</p>
-        <div class="reviews-container">
-            <!--
-            <div class="review">
-                <h2 class="review-name">polly :3</h2>
-                <p class="review-text">"budbud is the cutest and the most adorable being in the universe.<br>
-                    HOWEVER. he does NOT believe me no matter WHAT.<br>
-                    budbud is also very smart and nerdy in computer stuff!<br>
-                    we both drink monster!<br> #monster4life"</p>
-            </div>
-        -->
-            <div class="review" id="Alfie">
-                <h2 class="review-name">Alfie</h2>
-                <p class="review-text">"Cures depression. Trust me."</p>
-                <!--
-                <div class="my-opinion">Alfie is my best friend and genuinly couldn't live without him, I think he is a
-                    great guy and i'm glad to know him.
-                    <span class="close-button">X</span>
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2>Current Projects</h2>
+                <p>These are the projects I dont mind putting here, Some people i've worked with previously have been
+                    toxic therefore i dont want to be associated with them!</p><br><br>
+                <div id="projects-grid" class="projects-grid">
+                    <!-- dynamically loaded here -->
                 </div>
-                -->
-            </div>
-            <div class="review" id="Fredbear">
-                <h2 class="review-name">Fredbear</h2>
-                <p class="review-text">"Youre a very kind person and are always helping where you can<br>
-                    If you would’ve lived in Germany you would’ve been one of my friends in about 3 days<br>
-                    Your personality is also very good. There’s not a single aspect on you that I don’t like"</p>
-                <!--
-                <div class="my-opinion">I've known Fredbear for a while now. A really nice guy to hang out with and he
-                    can take a joke!!
-                    <span class="close-button">X</span>
+
+                <h2>Past Projects</h2>
+                <p>These are the projects that I no longer work on, whether its because i've left or there is no point
+                    updating them.</p><br><br>
+                <div id="past-projects-grid" class="past-projects-grid">
+                    <!-- dynamically loaded here -->
                 </div>
-                -->
             </div>
-            <div class="review" id="Stefegra">
-                <h2 class="review-name">Stefegra</h2>
-                <p class="review-text">"well, you're fun to talk to even if you randomly stop responding soetimes, and i
-                    like being in vc with you, also you made a remote wiiu which s like a +15 charisma if we're talking
-                    videogame stats; i'de like tyo know more about you but its hard due to not being able to meet, but
-                    generally you're a nice guy"</p>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <div class="container">
+                <h2>What People Say About Me</h2>
+                <p>If you'd like to be featured here, message me on Discord with your thoughts!</p><br><br>
+                <div id="reviews-grid" class="reviews-grid">
+                    <!-- dynamically loaded here -->
+                </div>
             </div>
-            <div class="review" id="dubocks">
-                <h2 class="review-name">dubocks</h2>
-                <p class="review-text">"I think youre a smart<br>
-                    generious<br>
-                    and kind person<br>
-                    you always help the server out and youll always talk to us<br>
-                    ur an amazing person bud"</p>
-            </div>
-            <div class="review" id="rufus4">
-                <h2 class="review-name">rufus4</h2>
-                <p class="review-text">"I think of you as a very good n kind person that respects ppl and a very good
-                    leader"</p>
-            </div>
-            <div class="review" id="Nick">
-                <h2 class="review-name">Nick</h2>
-                <p class="review-text">"Your cool<br> Bud brings a fresh, cool perspective to everything he does."</p>
-            </div>
-            <div class="review" id="akari">
-                <h2 class="review-name">𝑎𝑘𝑎𝑟𝑖✰</h2>
-                <p class="review-text">well I think of you as a great person like I see how you care for others and how
-                    you try to give advice to the best of your ability and your vibe is pretty nice to hang around even
-                    though you stay up and talk to anyone knowing you have work in a few hours or so</p>
-            </div>
-            <div class="review" id="Cookie">
-                <h2 class="review-name">Cookie</h2>
-                <p class="review-text"> I think you’re a kind, interesting, empathetic, funny, curious, smart person
-                    Ngl your curiosity is something that i really enjoy, like when you asked questions about me or just
-                    in general
-                    You’re like very very smart and skilled, yk a shit ton of things and yk how to do a shit ton of
-                    things which also makes you very interesting
-                    Your taste in music is amazing, I don’t know half of the songs you listen but they good good
-                    You’re very funny and open minded which ngl is a big w</p>
-            </div>
-            <div class="review" id="Mai">
-                <h2 class="review-name">Mai</h2>
-                <p class="review-text">"ur cool :3 <br> your the most epik super duper person ik ( also the best person
-                    to send random pinterest memes to >:3)"</p>
-            </div>
-            <div class="review" id="Puppy">
-                <h2 class="review-name">zephnatic</h2>
-                <p class="review-text">"i belive your a good person, sure you may be abit wierd every now and then but i
-                    dont see you as bad, your kinda someone who you can always have a good time with ya know?<br>
-                    In a nutshell your a good guy"</p>
-            </div>
-            <div class="review" id="pakaju">
-                <h2 class="review-name">pakaju</h2>
-                <p class="review-text">"You a cool person who's able to take a joke example baby bear lol, smart and
-                    dedicated to what you enjoy to do all dem open windows.<br> As well a good sense of humour including
-                    in games, and kind."</p>
-            </div>
-            <div class="review" id="Thae">
-                <h2 class="review-name">Thae</h2>
-                <p class="review-text">"I think you are kind of reserved and keep too much to yourself, but you're
-                    wicked brilliant, extremely kind, and quite handsome."</p>
-            </div>
-            <div class="review" id="RaeRae">
-                <h2 class="review-name">RaeRae <br>(<a href="https://www.twitch.tv/gamerinlilspace">Twitch Streamer</a>)
-                </h2>
-                <p class="review-text">"i think you are very intellectual and thoughtful.<br> You've always had my back
-                    and have given me a very realistic outlook on my issues"</p>
-            </div>
-            <div class="review" id="Confusion">
-                <h2 class="review-name">Confusion</h2>
-                <p class="review-text">"I think ur cool and fun, down to earth"</p>
-            </div>
-            <div class="review" id="superkiller">
-                <h2 class="review-name">superkiller</h2>
-                <p class="review-text">"A good person<br>
-                    Kind<br>
-                    Sweet<br>
-                    Good friend<br>
-                    A person that cares about others"</p>
-            </div>
-            <div class="review" id="Sonny">
-                <h2 class="review-name">Sonny</h2>
-                <p class="review-text">"Just a good man trying to get through life"</p>
-            </div>
-            <div class="review" id="Ava">
-                <h2 class="review-name">Ava</h2>
-                <p class="review-text">"I think you're an amazing person and that I love you dearly"</p>
-            </div>
-            <div class="review" id="Gianna">
-                <h2 class="review-name">Gianna</h2>
-                <p class="review-text">"You're a very kind hearted person and you care about people so much, you're an
-                    amazing person to talk to and give great advice"</p>
-            </div>
-            <div class="review" id="beanybitch">
-                <h2 class="review-name">.beaster</h2>
-                <p class="review-text">"i think youre alright<br>
-                    but not like that<br>
-                    like<br>
-                    ur really cool<br>
-                    i think what you do is cool and stuff<br>
-                    and ur a homie because we still talk"</p>
-            </div>
-            <div class="review" id="Domino">
-                <h2 class="review-name">Domino</h2>
-                <p class="review-text">"I think you’re pretty chill. Opinionated and you don’t always hide that, but
-                    still super sweet and you have good intentions. Very smart both book and street imo. The shutting
-                    people out worries a lot of your friends"</p>
-            </div>
-            <div class="review" id="genesis">
-                <h2 class="review-name">genesis</h2>
-                <p class="review-text">"I think you are a very nice, educated and dedicated person<br>
-                    Great friend, very hardworking and good listener<br>
-                    and what do you think of me?"</p>
-            </div>
-            <div class="review" id="Ukan">
-                <h2 class="review-name">Ukan</h2>
-                <p class="review-text">"When I chat with you, it made me calm down. You're the person I look for, so
-                    dont disapear."</p>
-            </div>
-            <div class="review" id="MikeTheTech">
-                <h2 class="review-name">MikeTheTech <br>(<a href="https://www.youtube.com/@MikeTheTech">Youtuber</a> &
-                    <a href="https://discord.gg/vGaPvtBme7">GameDeveloper</a>)
-                </h2>
-                <p class="review-text">"Helpful? Resourceful? Tech-forward, intelligent, and a good coder. Friendly."
+        </section>
+
+        <!-- Donate Section -->
+        <section id="donate">
+            <div class="container">
+                <h2>Support My Work</h2>
+                <p>If you'd like to support my projects and development journey, you can buy me a coffee!</p>
+                <p><a href="https://buymeacoffee.com/bud3699" target="_blank" class="donate-link">Buy Me a Coffee</a>
+                </p><br>
+                <p>Every little bit helps, and I'm immensely grateful for your support & contributions help fuel my
+                    passion and keep the creative juices flowing.</p>
                 </p>
+                <p>By buying me a coffee, you are not only helping me cover the costs of maintaining and improving my
+                    projects, but you are also enabling me to dedicate more time to creating valuable content and tools
+                    for the community.</p>
+                <p>Your contribution, no matter how small, makes a huge difference. It's an amazing feeling to know that
+                    there are people out there who appreciate my work and are willing to help me continue doing what I
+                    love.</p>
+                <p>So, if you enjoy what I do and want to see more of it, consider buying me a coffee. Your support
+                    means the world to me, and I can't thank you enough for being part of this journey.</p>
             </div>
-            <div class="review" id="lizardmods">
-                <h2 class="review-name">lizardmods</h2>
-                <p class="review-text">"Cool Dude<br> <br>You're the worst bro (Joking tone) <br>How could you do this
-                    (Joking tone)"</p>
+        </section>
+
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Hire Me or Contact Me</h2>
+                <p>If you're interested in hiring me or just want to reach out, feel free to contact me!</p><br>
+                <p>Email: <a href="mailto:bud3699@gmail.com">bud3699@gmail.com</a></p>
+                <p>Discord: <span>bud3699</span></p>
             </div>
-            <div class="review" id="chisenoa">
-                <h2 class="review-name">chisenoa <br>(<a href="https://discord.gg/mQvZyPr5p4">Game Developer</a>)</h2>
-                <p class="review-text">"you look like a good person<br>and i think youre a little crazy 😄"</p>
-            </div>
-            <div class="review" id="glitchy">
-                <h2 class="review-name">glitchy</h2>
-                <p class="review-text">"Bud, I think you’re a great guy. You’re always looking after people much like
-                    myself so I admire that. I can’t really say much because I haven’t met you in person but I’m always
-                    looking up to you"</p>
-            </div>
-            <div class="review" id="Kayden">
-                <h2 class="review-name">Kayden</h2>
-                <p class="review-text">"You're a pretty cool man"</p>
-            </div>
-
-        </div>
-        <h1 id="nerdstuff" class="nerdstuff"> More nerd stuff </h1>
-        <div class="more-aboutme">
-            <div class="Languages">
-                <div class="column-left">
-                    <h2>Programming Languages I Use Often:</h2>
-                    <ul>
-                        <li>Python</li>
-                        <li>C++</li>
-                        <li>C#</li>
-                        <li>Node.js</li>
-                    </ul>
-                </div>
-                <div class="column-right">
-                    <h2>Programming Languages I Know:</h2>
-                    <ul>
-                        <li> Java </li>
-                        <li> kotlin </li>
-                        <li> Ruby </li>
-                        <li> Lua</li>
-                        <li> Pascal </li>
-                        <li> Rust </li>
-                        <li> Go </li>
-                    </ul>
-                </div>
-            </div>
-            <p> i also have experience in HTML, CSS, javascript and PHP although i'll admit sometimes i'm not very
-                artistic, so don't count on me for making stuff look good </p>
-            <p class="animated">Hi from Bud!</p>
-            <p>P.s. this site looks better on mobile... And some browsers may display the slide in completely wrong... I
-                cant be bothered to fix it....</p>
-        </div>
-        <div class="more-info">
-            <h2>More About Me</h2>
-            <p>Interested in my work? Check out my <a href="https://github.com/bud3699" target="_blank">GitHub</a>
-                for more projects and code snippets.</p>
-            <p>If you want to chat or collaborate, feel free to contact me on Discord at <strong>bud3699</strong>.</p>
-        </div>
-
-    </div>
-</body>
-<script>
-    var username = localStorage.getItem('username');
-    mainWindows = document.getElementById("aboutme");
-    buttonHeader = document.getElementById("button-header");
-    if (username) {
-        document.getElementById('username').value = username;
-    }
-    if (username === 'lauren'){
-        mainWindows.style.display = "none";
-        buttonHeader.style.display = "none";
-        alert("An error has occured while loading the site")
-    }
-
-    window.onload = function () {
-        leaderboardRefresh()
-        adjustPodiumHeight();
-        window.addEventListener('resize', resizeButtons);
-
-        var closeButton = document.getElementsByClassName('close-button');
-
-        for (var i = 0; i < closeButton.length; i++) {
-            closeButton[i].addEventListener('click', function () {
-                this.parentElement.style.display = 'none';
-            });
-        }
-
-        var reviews = document.getElementsByClassName('review');
+        </section>
 
 
-        for (var i = 0; i < reviews.length; i++) {
-            reviews[i].addEventListener('mouseenter', function (e) {
-                var opinion = this.getElementsByClassName('my-opinion')[0];
-                var rect = this.getBoundingClientRect();
-                opinion.style.left = (e.pageX - rect.left) + 'px';
-                opinion.style.top = (e.pageY - rect.top) + 'px';
-                opinion.style.display = 'block';
-            });
+    </main>
 
-            reviews[i].addEventListener('mouseleave', function () {
-                var opinion = this.getElementsByClassName('my-opinion')[0];
-                opinion.style.display = 'none';
-            });
-        }
+    <footer>
+        <p>&copy; 2025 Bud. All rights reserved.</p>
+    </footer>
 
-
-        setTimeout(function () {
-            document.querySelector('.loading-overlay').style.display = 'none';
-            resizeButtons()
-            adjustPodiumHeight()
-        }, 4000);
-    };
-
-    function getPodiumHeights() {
-        var thirdPlace = document.getElementById("third");
-        var secondPlace = document.getElementById("second");
-        var firstPlace = document.getElementById("first");
-
-        thirdPlace.style.height = "auto";
-        secondPlace.style.height = "auto";
-        firstPlace.style.height = "auto";
-
-        var thirdPlaceHeight = thirdPlace.scrollHeight;
-        var secondPlaceHeight = secondPlace.scrollHeight;
-        var firstPlaceHeight = firstPlace.scrollHeight;
-
-        return {
-            thirdPlaceHeight: thirdPlaceHeight,
-            secondPlaceHeight: secondPlaceHeight,
-            firstPlaceHeight: firstPlaceHeight
-        };
-    }
-
-
-    function adjustPodiumHeight() {
-        var thirdPlace = document.getElementById("third");
-        var secondPlace = document.getElementById("second");
-        var firstPlace = document.getElementById("first");
-        var podiumHeights = getPodiumHeights();
-
-        if ((podiumHeights.secondPlaceHeight - 50) > podiumHeights.thirdPlaceHeight) {
-            if ((podiumHeights.firstPlaceHeight - 50) > podiumHeights.secondPlaceHeight) {
-                firstPlace.style.height = podiumHeights.firstPlaceHeight;
-                secondPlace.style.height = (podiumHeights.firstPlaceHeight - 50) + "px";
-                thirdPlace.style.height = (podiumHeights.firstPlaceHeight - 100) + "px";
-            } else {
-                firstPlace.style.height = (podiumHeights.secondPlaceHeight + 50) + "px";
-                secondPlace.style.height = podiumHeights.secondPlaceHeight + "px";
-                thirdPlace.style.height = (podiumHeights.secondPlaceHeight - 50) + "px";
-            }
-        } else {
-            if ((podiumHeights.thirdPlaceHeight + 100) > podiumHeights.firstPlaceHeight) {
-                firstPlace.style.height = (podiumHeights.thirdPlaceHeight + 100) + "px";
-                secondPlace.style.height = (podiumHeights.thirdPlaceHeight + 50) + "px";
-                thirdPlace.style.height = podiumHeights.thirdPlaceHeight + "px";
-            } else {
-                firstPlace.style.height = podiumHeights.firstPlaceHeight + "px";
-                secondPlace.style.height = (podiumHeights.firstPlaceHeight - 50) + "px";
-                thirdPlace.style.height = (podiumHeights.firstPlaceHeight - 100) + "px";
-
-            }
-
-        }
-
-    }
-
-
-
-    function leaderboardRefresh() {
-        var url = "http://budstesting.rf.gd/store/leaderboard.json";
-        var corsProxy = "https://corsproxy.io/?";
-
-        url += "?t=" + new Date().getTime();
-
-        fetch(corsProxy + url)
+    <script>
+        fetch('reviews.json')
             .then(response => response.json())
             .then(data => {
-                delete data["polinka"];
-                var entries = Object.entries(data);
-                entries.sort((a, b) => b[1] - a[1]);
+                const reviewsGrid = document.getElementById('reviews-grid');
+                data.reviews.forEach(review => {
+                    const reviewDiv = document.createElement('div');
+                    reviewDiv.className = 'review';
 
-                var places = ["first", "second", "third"];
-                var currentPlace = [];
-                var index = 0;
-                var podiumPlaces = {};
+                    const reviewName = document.createElement('h3');
+                    reviewName.textContent = review.name;
+                    reviewDiv.appendChild(reviewName);
 
-                for (var i = 0; i < entries.length; i++) {
-                    if (currentPlace.length > 0 && entries[i][1] !== currentPlace[0][1]) {
-                        podiumPlaces[places[index]] = createPlace(places[index], currentPlace);
-                        currentPlace = [];
-                        index++;
-                    }
-                    if (index >= places.length) {
-                        break;
-                    }
-                    currentPlace.push(entries[i]);
-                }
-                if (currentPlace.length > 0 && index < places.length) {
-                    podiumPlaces[places[index]] = createPlace(places[index], currentPlace);
-                }
+                    const reviewText = document.createElement('p');
+                    reviewText.textContent = review.text;
+                    reviewDiv.appendChild(reviewText);
 
-                var podium = document.getElementById("podium");
-                podium.innerHTML = '';
-                podium.appendChild(podiumPlaces['second']);
-                podium.appendChild(podiumPlaces['first']);
-                podium.appendChild(podiumPlaces['third']);
-
-                adjustPodiumHeight();
-            });
-
-
-    }
-
-    window.addEventListener("resize", adjustPodiumHeight);
-    window.addEventListener("resize", leaderboardRefresh);
-    setInterval(adjustPodiumHeight, 10000);
-    setInterval(leaderboardRefresh, 10000);
-
-    function createPlace(place, entries) {
-        var div = document.createElement("div");
-        div.id = place;
-        div.className = "place";
-
-        var namesDiv = document.createElement("div");
-        namesDiv.className = "names";
-        entries.forEach(entry => {
-            var name = document.createElement("div");
-            name.className = "name";
-            name.textContent = entry[0];
-            namesDiv.appendChild(name);
-        });
-        div.appendChild(namesDiv);
-
-        var score = document.createElement("div");
-        score.className = "score";
-        score.textContent = entries[0][1];
-        div.appendChild(score);
-
-        return div;
-    }
-
-
-    function resizeButtons() {
-        var buttons = document.getElementsByClassName('scroll-btn');
-        var maxWidth = 0;
-
-        if (window.innerWidth > 600) {
-            for (var i = 0; i < buttons.length; i++) {
-                if (buttons[i].offsetWidth > maxWidth) {
-                    maxWidth = buttons[i].offsetWidth;
-                }
-            }
-
-            maxWidth += 5;
-
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].style.width = maxWidth + 'px';
-                buttons[i].style.fontSize = "100%";
-            }
-        } else {
-            maxWidth = window.innerWidth / 4 - 20;
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].style.maxWidth = maxWidth + 'px';
-                if (window.innerWidth < 430) {
-                    buttons[i].style.fontSize = "70%";
-                } else {
-                    buttons[i].style.fontSize = "100%";
-                }
-            }
-        }
-    }
-
-
-
-    document.getElementById('toggle-header').addEventListener('click', () => {
-        const header = document.querySelector('.header');
-        const button = document.getElementById('toggle-header');
-        if (header.classList.contains('hidden')) {
-            header.classList.remove('hidden');
-            header.classList.add('shown');
-        } else if (header.classList.contains('shown')) {
-            header.classList.remove('shown');
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('shown');
-            header.classList.add('hidden');
-        }
-        button.classList.toggle('rotated');
-
-        if (buttons.classList.contains('hidden')) {
-            header.style.animation = 'slideButtonsOut 1s ease-in-out forwards';
-        } else {
-            header.style.animation = 'slideButtonsIn 1s ease-in-out forwards';
-        }
-    });
-
-
-
-    document.querySelectorAll('.scroll-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.getElementById(button.dataset.target);
-            let targetPosition;
-            if (window.matchMedia("(max-width: 600px)").matches) {
-                targetPosition = target.offsetTop;
-            } else {
-                targetPosition = target.offsetTop - 20;
-            }
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition;
-            const duration = 2000;
-            let start = null;
-
-            function step(timestamp) {
-                if (!start) start = timestamp;
-                const progress = timestamp - start;
-                window.scrollTo(0, easeOutQuad(progress, startPosition, distance, duration));
-                if (progress < duration) window.requestAnimationFrame(step);
-            }
-
-            function easeOutQuad(t, b, c, d) {
-                t /= d;
-                return -c * (t) * (t - 2) + b;
-            }
-
-            function easeInOutQuadNonSmooth(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t + b;
-                t--;
-                return -c / 2 * (t * (t - 2) - 1) + b;
-            }
-
-            window.requestAnimationFrame(step);
-        });
-    });
-
-
-
-
-
-    function adjustInput(input) {
-        input.style.width = ((input.value.length) * 7) + 'px';
-        if (input.id === 'username') {
-            localStorage.setItem('username', input.value);
-        }
-    }
-
-    let webhookUrl = 'https://ptb.discord.com/api/webhooks/1245567207975686217/nLMg4pB5ZQcba4Abg_j6jajGffS5rcd2ctYbK6v1PHz1oY6ODa7g4XYn-S7EOBwGyMQl';
-    let form = document.getElementById('discordForm');
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        let username = document.getElementById('username').value;
-        let message = document.getElementById('message').value;
-        let image = document.getElementById('image').files[0];
-
-        if (!username || !message) {
-            alert('Please enter both a username and a message.');
-            return;
-        }
-
-        let formData = new FormData();
-        formData.append('username', username);
-        formData.append('content', message);
-        formData.append('file', image);
-
-        let requestOptions = {
-            method: 'POST',
-            body: formData
-        };
-
-        fetch(webhookUrl, requestOptions)
-            .then(response => {
-                console.log('Message sent!');
-                document.getElementById('message').value = '';
-                let oldInput = document.getElementById('image');
-                let newInput = document.createElement('input');
-                newInput.type = 'file';
-                newInput.id = oldInput.id;
-                newInput.name = oldInput.name;
-                newInput.className = oldInput.className;
-                newInput.style.cssText = oldInput.style.cssText;
-                oldInput.parentNode.replaceChild(newInput, oldInput);
-                document.getElementById('preview').src = '';
-                document.getElementById('preview').style.display = 'none';
+                    reviewsGrid.appendChild(reviewDiv);
+                });
             })
-            .catch(error => console.error('Error:', error));
-        leaderboardRefresh
-    });
+            .catch(error => console.error('Error loading reviews:', error));
+    </script>
+    <script>
+        fetch('projects.json')
+            .then(response => response.json())
+            .then(data => {
+                const projectsGrid = document.getElementById('projects-grid');
 
-    document.getElementById('image').addEventListener('change', function (event) {
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            document.getElementById('preview').src = e.target.result;
-            document.getElementById('preview').style.display = 'block';
-        };
-        reader.readAsDataURL(event.target.files[0]);
-    });
+                data.projects.forEach(project => {
+                    const projectDiv = document.createElement('div');
+                    projectDiv.className = 'project';
+
+                    const blurEffect = document.createElement('div');
+                    blurEffect.classList.add('blur-background');
+                    blurEffect.style.position = 'absolute';
+                    blurEffect.style.top = '0';
+                    blurEffect.style.left = '0';
+                    blurEffect.style.width = '100%';
+                    blurEffect.style.height = '100%';
+                    blurEffect.style.backgroundImage = `url(${project.image})`;
+                    blurEffect.style.backgroundSize = 'cover';
+                    blurEffect.style.backgroundPosition = 'center';
+                    blurEffect.style.filter = 'blur(2px)';
+                    blurEffect.style.zIndex = '1';
+                    blurEffect.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                    blurEffect.style.mixBlendMode = 'overlay';
+                    projectDiv.appendChild(blurEffect);
+
+                    const blurOverlay = document.createElement('div');
+                    blurOverlay.classList.add('blur-overlay');
+                    blurOverlay.style.position = 'absolute';
+                    blurOverlay.style.top = '0';
+                    blurOverlay.style.left = '0';
+                    blurOverlay.style.width = '100%';
+                    blurOverlay.style.height = '100%';
+                    blurOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                    blurOverlay.style.zIndex = '2';
+                    projectDiv.appendChild(blurOverlay);
+
+                    const projectTitle = document.createElement('h3');
+                    projectTitle.style.position = 'relative';
+                    projectTitle.style.zIndex = '3';
+                    const projectLink = document.createElement('a');
+                    projectLink.href = project.link;
+                    projectLink.target = "_blank";
+                    projectLink.textContent = project.title;
+                    projectTitle.appendChild(projectLink);
+                    projectDiv.appendChild(projectTitle);
+
+                    const projectDescription = document.createElement('p');
+                    projectDescription.style.position = 'relative';
+                    projectDescription.style.zIndex = '3';
+                    projectDescription.textContent = project.description;
+                    projectDiv.appendChild(projectDescription);
+
+                    projectsGrid.appendChild(projectDiv);
+                });
+            })
+            .catch(error => console.error('Error loading projects:', error));
+
+    </script>
+    <script>
+        fetch('past-projects.json')
+            .then(response => response.json())
+            .then(data => {
+                const projectsGrid = document.getElementById('past-projects-grid');
+
+                data.projects.forEach(project => {
+                    const projectDiv = document.createElement('div');
+                    projectDiv.className = 'project';
+
+                    const blurEffect = document.createElement('div');
+                    blurEffect.classList.add('blur-background');
+                    blurEffect.style.position = 'absolute';
+                    blurEffect.style.top = '0';
+                    blurEffect.style.left = '0';
+                    blurEffect.style.width = '100%';
+                    blurEffect.style.height = '100%';
+                    blurEffect.style.backgroundImage = `url(${project.image})`;
+                    blurEffect.style.backgroundSize = 'cover';
+                    blurEffect.style.backgroundPosition = 'center';
+                    blurEffect.style.filter = 'blur(2px)';
+                    blurEffect.style.zIndex = '1';
+                    blurEffect.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                    blurEffect.style.mixBlendMode = 'overlay';
+                    projectDiv.appendChild(blurEffect);
+
+                    const blurOverlay = document.createElement('div');
+                    blurOverlay.classList.add('blur-overlay');
+                    blurOverlay.style.position = 'absolute';
+                    blurOverlay.style.top = '0';
+                    blurOverlay.style.left = '0';
+                    blurOverlay.style.width = '100%';
+                    blurOverlay.style.height = '100%';
+                    blurOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                    blurOverlay.style.zIndex = '2';
+                    projectDiv.appendChild(blurOverlay);
+
+                    const projectTitle = document.createElement('h3');
+                    projectTitle.style.position = 'relative';
+                    projectTitle.style.zIndex = '3';
+                    const projectLink = document.createElement('a');
+                    projectLink.href = project.link;
+                    projectLink.target = "_blank";
+                    projectLink.textContent = project.title;
+                    projectTitle.appendChild(projectLink);
+                    projectDiv.appendChild(projectTitle);
+
+                    const projectDescription = document.createElement('p');
+                    projectDescription.style.position = 'relative';
+                    projectDescription.style.zIndex = '3';
+                    projectDescription.textContent = project.description;
+                    projectDiv.appendChild(projectDescription);
+
+                    projectsGrid.appendChild(projectDiv);
+                });
+            })
+            .catch(error => console.error('Error loading projects:', error));
+
+    </script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+                    gsap.to(window, {
+                        scrollTo: target,
+                        duration: 1.5,
+                        ease: "power2.out"
+                    });
+                }
+            });
+        });
 
 
-</script>
-
-
-
-
-
-
-
+    </script>
+</body>
 
 </html>

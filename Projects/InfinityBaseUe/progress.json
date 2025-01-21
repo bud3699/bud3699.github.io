@@ -1,0 +1,92 @@
+{
+    "updates": [
+        {
+            "date": "2025-01-14",
+            "time": "06:38 GMT",
+            "title": "Removed packet checking",
+            "text": "Removed packet checking for position when sending packets to the device (This is to help mitigate poor performance if called to change light colours every tick... Not that you should)",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-01-13",
+            "time": "12:22 GMT",
+            "title": "Health System Example",
+            "text": "Made an example video for usage cases, this is a health system where the user can have 3 lives and when damaged slowly decreases (The red is just damage box)",
+            "image": null,
+            "video": "videos/2025-01-13 12-22-04.mp4"
+        },
+        {
+            "date": "2025-01-13",
+            "time": "11:38 GMT",
+            "title": "Proximity Usage Example",
+            "text": "Made an example video for usage cases, this is is for a proximity sensor in unreal engine.<br>(The delay is not that bad, my camera is a bit slow, i need a better one)",
+            "image": null,
+            "video": "videos/2025-01-13 11-38-57.mp4"
+        },
+        {
+            "date": "2025-01-13",
+            "time": "06:21 GMT",
+            "title":"Started implimenting recieving location data in UE",
+            "text": "I've started working on recieving location data of character but inside of unreal engine<br><br> as a side note, unreal engine does not like waiting around for data.<br>Should I perhaps keep checking in the class then when called I can return the last known value?",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-01-12",
+            "time": "15:19 GMT",
+            "title": "Initial Integration",
+            "text": "Successfully integrated the Disney Infinity Base with Unreal Engine blueprint projects",
+            "image": "../Images/UnrealEngineInfinityPortal.png",
+            "video": "videos/2025-01-12 15-19-04.mp4"
+        },
+        {
+            "date": "2025-01-12",
+            "time": "12:30 GMT",
+            "title": "Fixed all memory leaks",
+            "text": "Fixed all memory leaks within unreal engine when sending data wayyy too fast.",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-01-12",
+            "time": "04:52 GMT",
+            "title": "Achieved Intial integration into unreal engine",
+            "text": "First working build into unreal engine.",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-01-11",
+            "time": "19:07 GMT",
+            "title": "Recieving character data implimented",
+            "text": "Initial character data implimented to be able to read what is placed down.",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-01-12",
+            "time": "16:31 GMT",
+            "title": "Recieving locationd data implimented",
+            "text": "Initial character location implimented to be able to read where an item is placed.",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "A long time ago",
+            "time": "Unknown",
+            "title": "Figured out light data",
+            "text": "After a long time of brute forcing, I decided to pass through the device to my wii u to debug some base data that way.<br><br>This worked and allowed me to figure out how lights work.",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "A long time ago",
+            "time": "Unknown",
+            "title": "Started the project.",
+            "text": "Started with dumping as much info and brute forcing packet sending until the device reacted in some kind of way.<Br><br> I've noticed that when the device gets activated you can hear it scanning when placing cables ontop of it",
+            "image": null,
+            "video": null
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "projects": [
+      {
+        "title": "Leave me a message",
+        "description": "My feature built into my old website which allowed people to leave me a message or spam to get on a leaderboard (I may bring this back)",
+        "link": "Projects/LeaveMeAMessage/",
+        "image": "images/LeaveMeAMessage.png"
+      },
+      {
+        "title": "Virtual Display Driver",
+        "description": "Creating a virtual display driver to enhance multi-screen setups.",
+        "link": "https://github.com/VirtualDisplay/Virtual-Display-Driver",
+        "image": "https://avatars.githubusercontent.com/u/190232074?s=400&u=19637598783c81e06bd44cd8020c5e5e108989f3&v=4"
+      },
+      {
+        "title": "VDD SysTray",
+        "description": "Sole programmer of the Vdd sys tray application which communicates with the VDD. Soon to be removed",
+        "link": "https://github.com/VirtualDisplay/Virtual-Display-Driver",
+        "image": "https://avatars.githubusercontent.com/u/190232074?s=400&u=19637598783c81e06bd44cd8020c5e5e108989f3&v=4"
+      },
+      {
+        "title": "VDD Installer",
+        "description": "An installer to help install the vdd along with systray app alongside jockes scripts.",
+        "link": "https://github.com/VirtualDisplay/Virtual-Display-Driver",
+        "image": "https://avatars.githubusercontent.com/u/190232074?s=400&u=19637598783c81e06bd44cd8020c5e5e108989f3&v=4"
+      },
+      {
+        "title": "Omegle Ip Grabber",
+        "description": "Educational purposes, an IP grabber I made for omegle (Back when it existed)",
+        "link": "https://github.com/bud3699/Omegle-IP-Grab",
+        "image": null
+      },
+      {
+        "title": "Beatsaber DLC converter",
+        "description": "Educational purposes, A dlc converter to convert PC beatsaber DLC's to Quest beatsaber DLC's and vice versa",
+        "link": "https://github.com/bud3699/Beatsaber-DLC-Convert",
+        "image": null
+      },
+      {
+        "title": "Serial Command Sender",
+        "description": "A basic app which allows you to conenct to a serial port at specific baud rate then send commands on a press of the button",
+        "link": "https://github.com/bud3699/SerialCommandSeneder",
+        "image": null
+      }
+    ]
+  }
+  

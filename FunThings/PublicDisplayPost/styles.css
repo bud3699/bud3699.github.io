@@ -1,0 +1,104 @@
+.container {
+    max-width: 70%;
+    margin: 3% auto 0;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    /*transform: translateX(200%);
+    animation: slideIn 2s ease-in-out forwards;
+    animation-delay: 3s;*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Messagesclass {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+
+}
+
+
+#messageList {
+    width: 100%;
+
+}
+
+.message {
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px auto;
+
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: rgba(21, 21, 22, 1);
+    color: white;
+}
+
+
+.author {
+    align-self: flex-start;
+    font-size: large;
+    font-size-adjust: initial + 5;
+    font-weight: bold;
+}
+
+.timestamp {
+    align-self: flex-end;
+    color: grey;
+    font-size: small;
+}
+
+.content {
+    text-align: center;
+    width: 80%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#aboutme .Messagesclass {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#aboutme .Messagesclass {
+    margin: 0;
+    padding: 0;
+}
+
+.author a {
+    color: black;
+    text-decoration: underline;
+}
+
+.author a:hover {
+    color: #ccc;
+}
+
+.content {
+    text-align: center;
+    width: 80%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.timestamp {
+    align-self: flex-end;
+    color: grey;
+    font-size: small;
+}
