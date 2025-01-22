@@ -1,0 +1,12 @@
+{
+    "blogs": [
+      {
+        "title": "Started work on a new vdi driver",
+        "date": "2025-01-22",
+        "author": "Bud & Liam",
+        "content": "Started work on a virtual display driver with better integration with liam",
+        "image": null
+      }
+    ]
+  }
+  

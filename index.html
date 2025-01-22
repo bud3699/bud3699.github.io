@@ -46,6 +46,17 @@
             </div>
         </section>
 
+        <!-- Blog Section -->
+        <section id="blog">
+            <div class="container">
+                <h2>Blog</h2>
+                <div id="blog-grid" class="blog-grid">
+                    <!-- dynamically loaded here -->
+                </div>
+                <button id="show-more-btn" class="show-more">Show More</button>
+            </div>
+        </section>
+
 
         <!-- Projects Section -->
         <section id="projects">
@@ -98,7 +109,7 @@
             </div>
         </section>
 
-        
+
         <!-- Contact Section -->
         <section id="contact">
             <div class="container">
@@ -256,6 +267,80 @@
             .catch(error => console.error('Error loading projects:', error));
 
     </script>
+
+    <script>
+        let blogIndex = 0;
+        const blogsPerLoad = 4;
+
+        fetch('blogs.json')
+            .then(response => response.json())
+            .then(data => {
+                const blogGrid = document.getElementById('blog-grid');
+                const showMoreBtn = document.getElementById('show-more-btn');
+
+                function loadBlogs() {
+                    const blogsToShow = data.blogs.slice(blogIndex, blogIndex + blogsPerLoad);
+                    blogsToShow.forEach(blog => {
+                        const blogDiv = document.createElement('div');
+                        blogDiv.className = 'blog-post';
+
+                        if (blog.image && blog.image !== '') {
+                            const imageContainer = document.createElement('div');
+                            imageContainer.className = 'image-container';
+
+                            const blogImage = document.createElement('img');
+                            blogImage.src = blog.image;
+                            blogImage.alt = blog.title;
+
+                            imageContainer.appendChild(blogImage);
+                            blogDiv.appendChild(imageContainer);
+                        }
+
+                        const blogTitle = document.createElement('h3');
+                        blogTitle.textContent = blog.title;
+                        blogDiv.appendChild(blogTitle);
+
+                        const blogDate = document.createElement('p');
+                        blogDate.className = 'blog-date';
+                        blogDate.textContent = `Published on: ${blog.date}`;
+                        blogDiv.appendChild(blogDate);
+
+                        const blogAuthor = document.createElement('p');
+                        blogAuthor.className = 'blog-author';
+                        blogAuthor.textContent = `By: ${blog.author}`;
+                        blogDiv.appendChild(blogAuthor);
+
+                        const blogContent = document.createElement('p');
+                        blogContent.className = 'blog-content';
+                        blogContent.textContent = blog.content;
+                        blogDiv.appendChild(blogContent);
+
+                        const fadeDiv = document.createElement('div');
+                        fadeDiv.className = 'blog-fade';
+                        blogDiv.appendChild(fadeDiv);
+
+                        blogGrid.appendChild(blogDiv);
+
+                        setTimeout(() => {
+                            blogDiv.classList.add('fade-in');
+                        }, 50); 
+                    });
+
+                    blogIndex += blogsPerLoad;
+                    if (blogIndex >= data.blogs.length) {
+                        showMoreBtn.style.display = 'none';
+                    }
+                }
+
+                loadBlogs();
+
+                showMoreBtn.addEventListener('click', loadBlogs);
+            })
+            .catch(error => console.error('Error loading blogs:', error));
+
+    </script>
+
+
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
