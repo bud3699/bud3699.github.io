@@ -1,10 +1,17 @@
 {
     "blogs": [
       {
+        "title": "TOML configuration loading in the driver",
+        "date": "2025-01-24",
+        "author": "Bud",
+        "content": "Starting to add integration of using TOML as configuration to make it look cleaner",
+        "image": null
+      },
+      {
         "title": "Started work on a new vdi driver",
         "date": "2025-01-22",
         "author": "Bud & Liam",
-        "content": "Started work on a virtual display driver with better integration with liam",
+        "content": "Started work on a VDI, a driver to allow display integration with applications such as sunshine",
         "image": null
       }
     ]

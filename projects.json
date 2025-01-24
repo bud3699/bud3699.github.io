@@ -7,6 +7,12 @@
         "image": "images/UnrealEngineInfinityPortal.png"
       },
       {
+        "title": "VDI",
+        "description": "A integrated virtual display driver which allows for easier use with integration in applications such as sunshine",
+        "link": "Projects/VDI",
+        "image": null
+      },
+      {
         "title": "Buds Edid Database",
         "description": "One of the largest EDID databases with Unique displays only (No duplicates to save on server speed/processing)",
         "link": "https://edid.mikethetech.com/",
