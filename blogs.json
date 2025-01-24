@@ -1,19 +1,25 @@
 {
-    "blogs": [
-      {
-        "title": "TOML configuration loading in the driver",
-        "date": "2025-01-24",
-        "author": "Bud",
-        "content": "Starting to add integration of using TOML as configuration to make it look cleaner",
-        "image": null
-      },
-      {
-        "title": "Started work on a new vdi driver",
-        "date": "2025-01-22",
-        "author": "Bud & Liam",
-        "content": "Started work on a VDI, a driver to allow display integration with applications such as sunshine",
-        "image": null
-      }
-    ]
-  }
-  
+  "blogs": [
+    {
+      "title": "TOML configuration",
+      "date": "2025-01-24 17:04",
+      "author": "Bud",
+      "content": "Added full support for TOML Configuration including handling refresh rate arrays properly... Unlike atl with XML...",
+      "image": null
+    },
+    {
+      "title": "TOML configuration loading in the driver",
+      "date": "2025-01-24",
+      "author": "Bud",
+      "content": "Starting to add integration of using TOML as configuration to make it look cleaner",
+      "image": null
+    },
+    {
+      "title": "Started work on a new vdi driver",
+      "date": "2025-01-22",
+      "author": "Bud & Liam",
+      "content": "Started work on a VDI, a driver to allow display integration with applications such as sunshine",
+      "image": null
+    }
+  ]
+}

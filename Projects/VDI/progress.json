@@ -2,6 +2,22 @@
     "updates": [
         {
             "date": "22/01/24",
+            "time": "17:04",
+            "title": "TOML configuration done",
+            "text": "Added full support for TOML Configuration including handling refresh rate arrays properly... Unlike atl with XML...",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "22/01/24",
+            "time": "00:21",
+            "title": "TOML configuration loading in the driver",
+            "text": "Starting to add integration of using TOML as configuration to make it look cleaner",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "22/01/24",
             "time": "Unknown",
             "title": "Started the project.",
             "text": "Started the project with my best mate liam",
