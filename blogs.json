@@ -1,6 +1,13 @@
 {
   "blogs": [
     {
+      "title": "Name Changes for VDD to VDI",
+      "date": "2025-01-25 21:17",
+      "author": "Liam",
+      "content": "Read the summary",
+      "image": null
+    },
+    {
       "title": "Updated Post Build Events for arm64",
       "date": "2025-01-25 21:17",
       "author": "Bud",

@@ -2,6 +2,14 @@
     "updates": [
         {
             "date": "25/01/24",
+            "time": "22:46",
+            "title": "Liam committed",
+            "text": "Name Changes for VDD to VDI",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "25/01/24",
             "time": "21:17",
             "title": "Bud committed",
             "text": "Removed Rest of XML",
@@ -41,7 +49,7 @@
             "video": null
         },
 
-        
+
         {
             "date": "23/01/24",
             "time": "17:04",
