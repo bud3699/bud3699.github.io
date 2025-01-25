@@ -1,8 +1,45 @@
 {
   "blogs": [
     {
+      "title": "Updated Post Build Events for arm64",
+      "date": "2025-01-25 21:17",
+      "author": "Bud",
+      "content": "Xml gone",
+      "image": null
+    },
+    {
+      "title": "Updated Post Build Events for arm64",
+      "date": "2025-01-25 03:38",
+      "author": "Bud",
+      "content": "Updated Post Build Events for arm64",
+      "image": null
+    },
+    {
+      "title": "Toml Gpu Settings",
+      "date": "2025-01-25 02:25",
+      "author": "Liam",
+      "content": "Function for the Toml Gpu settings",
+      "image": null
+    },
+    {
+      "title": "Disabled Mitigation",
+      "date": "2025-01-24 23:15",
+      "author": "Liam",
+      "content": "Disabled Spectre Mitigation",
+      "image": null
+    },
+    {
+      "title": "Updated changing configuration true or false",
+      "date": "2025-01-24 23:14",
+      "author": "Bud",
+      "content": "Updated changing configuration true or false and removed need for ATL",
+      "image": null
+    },
+
+
+    {
       "title": "TOML configuration",
-      "date": "2025-01-24 17:04",
+      "date": "2025-01-23 17:04",
       "author": "Bud",
       "content": "Added full support for TOML Configuration including handling refresh rate arrays properly... Unlike atl with XML...",
       "image": null

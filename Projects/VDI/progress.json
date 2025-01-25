@@ -1,7 +1,49 @@
 {
     "updates": [
         {
-            "date": "22/01/24",
+            "date": "25/01/24",
+            "time": "21:17",
+            "title": "Bud committed",
+            "text": "Removed Rest of XML",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "25/01/24",
+            "time": "02:28",
+            "title": "Bud committed",
+            "text": "Updated Post Build Events for arm64",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "25/01/24",
+            "time": "02:25",
+            "title": "Liam committed",
+            "text": "Toml Gpu Settings",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "24/01/24",
+            "time": "23:15",
+            "title": "Liam committed",
+            "text": "Disabled Mitigation",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "24/01/24",
+            "time": "23:14",
+            "title": "Bud committed",
+            "text": "Updated changing configuration true or false and removed need for ATL",
+            "image": null,
+            "video": null
+        },
+
+        
+        {
+            "date": "23/01/24",
             "time": "17:04",
             "title": "TOML configuration done",
             "text": "Added full support for TOML Configuration including handling refresh rate arrays properly... Unlike atl with XML...",
