@@ -128,7 +128,7 @@
     </footer>
 
     <script>
-        fetch('reviews.json')
+        fetch(`reviews.json?timestamp=${Date.now()}`)
             .then(response => response.json())
             .then(data => {
                 const reviewsGrid = document.getElementById('reviews-grid');
@@ -150,7 +150,7 @@
             .catch(error => console.error('Error loading reviews:', error));
     </script>
     <script>
-        fetch('projects.json')
+        fetch(`projects.json?timestamp=${Date.now()}`)
             .then(response => response.json())
             .then(data => {
                 const projectsGrid = document.getElementById('projects-grid');
@@ -209,7 +209,7 @@
 
     </script>
     <script>
-        fetch('past-projects.json')
+        fetch(`past-projects.json?timestamp=${Date.now()}`)
             .then(response => response.json())
             .then(data => {
                 const projectsGrid = document.getElementById('past-projects-grid');
@@ -270,9 +270,9 @@
 
     <script>
         let blogIndex = 0;
-        const blogsPerLoad = 4;
+        const blogsPerLoad = 8;
 
-        fetch('blogs.json')
+        fetch(`blogs.json?timestamp=${Date.now()}`)
             .then(response => response.json())
             .then(data => {
                 const blogGrid = document.getElementById('blog-grid');

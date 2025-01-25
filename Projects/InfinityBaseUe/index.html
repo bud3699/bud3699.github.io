@@ -71,7 +71,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const progressContainer = document.getElementById('progress-content');
 
-            const jsonFilePath = 'progress.json';
+            const jsonFilePath = `progress.json?timestamp=${Date.now()}`;
 
             fetch(jsonFilePath)
                 .then(response => response.json())
