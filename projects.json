@@ -4,7 +4,7 @@
         "title": "Infinity Base UE",
         "description": "An unreal engine pack i'm creating to interface with disney infinity portal.",
         "link": "Projects/InfinityBaseUe",
-        "image": "images/UnrealEngineInfinityPortal.png"
+        "image": "Images/UnrealEngineInfinityPortal.png"
       },
       {
         "title": "VDI",
@@ -52,7 +52,7 @@
         "title": "Game Mods",
         "description": "Mods for Subnautica, Minecraft (Java & Bedrock), Rust, and Unity games.",
         "link": "#",
-        "image": "images/game-mods.jpg"
+        "image": null
       }
     ]
   }
