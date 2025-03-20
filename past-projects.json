@@ -41,6 +41,12 @@
         "description": "A basic app which allows you to conenct to a serial port at specific baud rate then send commands on a press of the button",
         "link": "https://github.com/bud3699/SerialCommandSeneder",
         "image": null
+      },
+      {
+        "title": "Polygone",
+        "description": "A game developed with MikeTheTech, available on Steam.",
+        "link": "https://store.steampowered.com/app/2281200/Polygone/",
+        "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2281200/library_600x900_2x.jpg"
       }
     ]
   }
