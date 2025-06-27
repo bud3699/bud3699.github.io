@@ -1,16 +1,18 @@
 {
-  "projects": [
-    {
-      "title": "Send-A-Sketch",
-      "description": "A simple and fun sketch-sharing platform made by Bud!",
-      "link": "FunThings/SendASketch",
-      "image": "Images/SendASketch.png"
-    },
-    {
-      "title": "Noctilux",
-      "description": "Generates unique constellations based on seed values.",
-      "link": "FunThings/Noctilux",
-      "image": "Images/Welmyst_constellation.png"
-    }
-  ]
+    "projects": [
+        {
+            "title": "Noctilux",
+            "description": "Generates unique constellations based on seed values.",
+            "link": "FunThings/Noctilux",
+            "image": "Images/Welmyst_constellation.png",
+            "date": "2025-06-27"
+        },
+        {
+            "title": "Send-A-Sketch",
+            "description": "A simple and fun sketch-sharing platform made by Bud!",
+            "link": "FunThings/SendASketch",
+            "image": "Images/SendASketch.png",
+            "date": "2025-06-26"
+        }
+    ]
 }

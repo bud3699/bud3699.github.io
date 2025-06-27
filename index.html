@@ -379,55 +379,69 @@
             data.projects.forEach(project => {
                 const projectDiv = document.createElement('div');
                 projectDiv.className = 'project';
+                projectDiv.style.position = 'relative';
 
                 const blurEffect = document.createElement('div');
                 blurEffect.classList.add('blur-background');
-                blurEffect.style.position = 'absolute';
-                blurEffect.style.top = '0';
-                blurEffect.style.left = '0';
-                blurEffect.style.width = '100%';
-                blurEffect.style.height = '100%';
-                blurEffect.style.backgroundImage = `url(${project.image})`;
-                blurEffect.style.backgroundSize = 'cover';
-                blurEffect.style.backgroundPosition = 'center';
-                blurEffect.style.filter = 'blur(2px)';
-                blurEffect.style.zIndex = '1';
-                blurEffect.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-                blurEffect.style.mixBlendMode = 'overlay';
+                Object.assign(blurEffect.style, {
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: `url(${project.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'blur(2px)',
+                    zIndex: '1',
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                    mixBlendMode: 'overlay'
+                });
                 projectDiv.appendChild(blurEffect);
 
                 const blurOverlay = document.createElement('div');
-                blurOverlay.classList.add('blur-overlay');
-                blurOverlay.style.position = 'absolute';
-                blurOverlay.style.top = '0';
-                blurOverlay.style.left = '0';
-                blurOverlay.style.width = '100%';
-                blurOverlay.style.height = '100%';
-                blurOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-                blurOverlay.style.zIndex = '2';
+                Object.assign(blurOverlay.style, {
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                    zIndex: '2'
+                });
                 projectDiv.appendChild(blurOverlay);
 
+                const contentWrapper = document.createElement('div');
+                contentWrapper.style.position = 'relative';
+                contentWrapper.style.zIndex = '3';
+
                 const projectTitle = document.createElement('h3');
-                projectTitle.style.position = 'relative';
-                projectTitle.style.zIndex = '3';
                 const projectLink = document.createElement('a');
                 projectLink.href = project.link;
                 projectLink.target = "_blank";
                 projectLink.textContent = project.title;
                 projectTitle.appendChild(projectLink);
-                projectDiv.appendChild(projectTitle);
+                contentWrapper.appendChild(projectTitle);
+
 
                 const projectDescription = document.createElement('p');
-                projectDescription.style.position = 'relative';
-                projectDescription.style.zIndex = '3';
                 projectDescription.textContent = project.description;
-                projectDiv.appendChild(projectDescription);
+                contentWrapper.appendChild(projectDescription);
 
+                const projectDate = document.createElement('p');
+                projectDate.className = 'project-date';
+                projectDate.textContent = `${project.date}`;
+                projectDate.style.fontSize = '0.9em';
+                projectDate.style.color = '#ccc';
+                contentWrapper.appendChild(projectDate);
+
+                projectDiv.appendChild(contentWrapper);
                 projectDayGrid.appendChild(projectDiv);
             });
         })
         .catch(error => console.error('Error loading Project-a-Day:', error));
 </script>
+
 
 </body>
 
