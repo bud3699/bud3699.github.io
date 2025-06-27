@@ -8,7 +8,7 @@
     },
     {
       "title": "Noctilux",
-      "description": "Generates unique constellations based on seed values. Great for procedural skyboxes, creativity exercises, or aesthetic inspiration.",
+      "description": "Generates unique constellations based on seed values.",
       "link": "FunThings/Noctilux",
       "image": "Images/Welmyst_constellation.png"
     }
