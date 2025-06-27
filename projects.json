@@ -1,12 +1,6 @@
 {
     "projects": [
       {
-      "title": "Send-A-Sketch",
-      "description": "A simple and fun sketch-sharing platform made by Bud!",
-      "link": "FunThings/SendASketch",
-      "image": "Images/SendASketch.png"
-      },
-      {
         "title": "Infinity Base UE",
         "description": "An unreal engine pack i'm creating to interface with disney infinity portal.",
         "link": "Projects/InfinityBaseUe",

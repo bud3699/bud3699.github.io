@@ -49,7 +49,14 @@
         <!-- Projects Section -->
         <section id="projects">
             <div class="container">
-                
+
+                <h2>Project-a-Day Challenge</h2>
+                <p>Quick daily builds and creative bursts — projects made in a single day for fun or experimentation!
+                </p><br><br>
+                <div id="project-a-day-grid" class="projects-grid">
+                    <!-- dynamically loaded here -->
+                </div>
+
                 <h2>Current Projects</h2>
                 <p>These are the projects I dont mind putting here, Some people i've worked with previously have been
                     toxic therefore i dont want to be associated with them!</p><br><br>
@@ -362,6 +369,66 @@
 
 
     </script>
+
+    <script>
+    fetch(`project-a-day.json?timestamp=${Date.now()}`)
+        .then(response => response.json())
+        .then(data => {
+            const projectDayGrid = document.getElementById('project-a-day-grid');
+
+            data.projects.forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project';
+
+                const blurEffect = document.createElement('div');
+                blurEffect.classList.add('blur-background');
+                blurEffect.style.position = 'absolute';
+                blurEffect.style.top = '0';
+                blurEffect.style.left = '0';
+                blurEffect.style.width = '100%';
+                blurEffect.style.height = '100%';
+                blurEffect.style.backgroundImage = `url(${project.image})`;
+                blurEffect.style.backgroundSize = 'cover';
+                blurEffect.style.backgroundPosition = 'center';
+                blurEffect.style.filter = 'blur(2px)';
+                blurEffect.style.zIndex = '1';
+                blurEffect.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                blurEffect.style.mixBlendMode = 'overlay';
+                projectDiv.appendChild(blurEffect);
+
+                const blurOverlay = document.createElement('div');
+                blurOverlay.classList.add('blur-overlay');
+                blurOverlay.style.position = 'absolute';
+                blurOverlay.style.top = '0';
+                blurOverlay.style.left = '0';
+                blurOverlay.style.width = '100%';
+                blurOverlay.style.height = '100%';
+                blurOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                blurOverlay.style.zIndex = '2';
+                projectDiv.appendChild(blurOverlay);
+
+                const projectTitle = document.createElement('h3');
+                projectTitle.style.position = 'relative';
+                projectTitle.style.zIndex = '3';
+                const projectLink = document.createElement('a');
+                projectLink.href = project.link;
+                projectLink.target = "_blank";
+                projectLink.textContent = project.title;
+                projectTitle.appendChild(projectLink);
+                projectDiv.appendChild(projectTitle);
+
+                const projectDescription = document.createElement('p');
+                projectDescription.style.position = 'relative';
+                projectDescription.style.zIndex = '3';
+                projectDescription.textContent = project.description;
+                projectDiv.appendChild(projectDescription);
+
+                projectDayGrid.appendChild(projectDiv);
+            });
+        })
+        .catch(error => console.error('Error loading Project-a-Day:', error));
+</script>
+
 </body>
 
 </html>

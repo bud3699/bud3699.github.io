@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "title": "Send-A-Sketch",
+      "description": "A simple and fun sketch-sharing platform made by Bud!",
+      "link": "FunThings/SendASketch",
+      "image": "Images/SendASketch.png"
+    },
+    {
+      "title": "Noctilux",
+      "description": "Generates unique constellations based on seed values. Great for procedural skyboxes, creativity exercises, or aesthetic inspiration.",
+      "link": "FunThings/Noctilux",
+      "image": "Images/Welmyst_constellation.png"
+    }
+  ]
+}
