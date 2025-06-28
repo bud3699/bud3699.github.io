@@ -1,6 +1,13 @@
 {
     "projects": [
         {
+            "title": "MorseMaster",
+            "description": "Website for learning or challenging yourself with morse code.",
+            "link": "FunThings/MorseMaster",
+            "image": "Images/MorseMaster.png",
+            "date": "2025-06-28"
+        },
+        {
             "title": "Noctilux",
             "description": "Generates unique constellations based on seed values.",
             "link": "FunThings/Noctilux",
