@@ -1,6 +1,13 @@
 {
     "projects": [
         {
+            "title": "Patty Panic",
+            "description": "Flip dem burgers and cook em or you fail. Silly game...",
+            "link": "FunThings/BurgerChallenge",
+            "image": "Images/BurgerChallenge.png",
+            "date": "2025-06-29"
+        },
+        {
             "title": "MorseMaster",
             "description": "Website for learning or challenging yourself with morse code.",
             "link": "FunThings/MorseMaster",
