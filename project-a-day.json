@@ -1,6 +1,7 @@
 {
     "projects": [
         {
+            "id": 4,
             "title": "Patty Panic",
             "description": "Flip dem burgers and cook em or you fail. Silly game...",
             "link": "FunThings/BurgerChallenge",
@@ -8,6 +9,7 @@
             "date": "2025-06-29"
         },
         {
+            "id": 3,
             "title": "MorseMaster",
             "description": "Website for learning or challenging yourself with morse code.",
             "link": "FunThings/MorseMaster",
@@ -15,6 +17,7 @@
             "date": "2025-06-28"
         },
         {
+            "id": 2,
             "title": "Noctilux",
             "description": "Generates unique constellations based on seed values.",
             "link": "FunThings/Noctilux",
@@ -22,6 +25,7 @@
             "date": "2025-06-27"
         },
         {
+            "id": 1,
             "title": "Send-A-Sketch",
             "description": "A simple and fun sketch-sharing platform made by Bud!",
             "link": "FunThings/SendASketch",

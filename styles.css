@@ -614,3 +614,24 @@ a:hover {
     font-style: italic;
     margin-bottom: 0.5em;
 }
+
+
+
+.present-overlay {
+    background-color: rgba(255, 0, 0, 0.9); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10; 
+}
+.present-overlay:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease; 
+}

@@ -51,7 +51,8 @@
             <div class="container">
 
                 <h2>Project-a-Day Challenge</h2>
-                <p>A Challenge I set myself to create a project a day, all static sites only since I cant afford to run a server. Donations greatly appreciated!
+                <p>A Challenge I set myself to create a project a day, all static sites only since I cant afford to run
+                    a server. Donations greatly appreciated!
                 </p><br><br>
                 <div id="project-a-day-grid" class="projects-grid">
                     <!-- dynamically loaded here -->
@@ -369,78 +370,133 @@
 
 
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
-    fetch(`project-a-day.json?timestamp=${Date.now()}`)
-        .then(response => response.json())
-        .then(data => {
-            const projectDayGrid = document.getElementById('project-a-day-grid');
+        fetch(`project-a-day.json?timestamp=${Date.now()}`)
+            .then(response => response.json())
+            .then(data => {
+                const projectDayGrid = document.getElementById('project-a-day-grid');
 
-            data.projects.forEach(project => {
-                const projectDiv = document.createElement('div');
-                projectDiv.className = 'project';
-                projectDiv.style.position = 'relative';
+                data.projects.forEach((project) => {
+                    const projectDiv = document.createElement('div');
+                    projectDiv.className = 'project';
+                    projectDiv.style.position = 'relative';
 
-                const blurEffect = document.createElement('div');
-                blurEffect.classList.add('blur-background');
-                Object.assign(blurEffect.style, {
-                    position: 'absolute',
-                    top: '0',
-                    left: '0',
-                    width: '100%',
-                    height: '100%',
-                    backgroundImage: `url(${project.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'blur(2px)',
-                    zIndex: '1',
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                    mixBlendMode: 'overlay'
+                    const presentOverlay = document.createElement('div');
+                    presentOverlay.className = 'present-overlay';
+                    presentOverlay.style.position = 'absolute';
+                    presentOverlay.style.top = '0';
+                    presentOverlay.style.left = '0';
+                    presentOverlay.style.width = '100%';
+                    presentOverlay.style.height = '100%';
+                    presentOverlay.style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
+                    presentOverlay.style.display = 'flex';
+                    presentOverlay.style.flexDirection = 'column';
+                    presentOverlay.style.alignItems = 'center';
+                    presentOverlay.style.justifyContent = 'center';
+                    presentOverlay.style.color = 'white';
+                    presentOverlay.style.fontSize = '1.5em';
+                    presentOverlay.style.cursor = 'pointer';
+
+                    const presentText = document.createElement('div');
+                    presentText.textContent = '🎁 Click to Open!';
+                    presentOverlay.appendChild(presentText);
+
+                    const projectDateText = document.createElement('div');
+                    projectDateText.textContent = project.date;
+                    projectDateText.style.fontSize = '1em';
+                    projectDateText.style.marginTop = '10px';
+                    presentOverlay.appendChild(projectDateText);
+
+                    projectDiv.appendChild(presentOverlay);
+
+                    const blurEffect = document.createElement('div');
+                    blurEffect.classList.add('blur-background');
+                    Object.assign(blurEffect.style, {
+                        position: 'absolute',
+                        top: '0',
+                        left: '0',
+                        width: '100%',
+                        height: '100%',
+                        backgroundImage: `url(${project.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'blur(2px)',
+                        zIndex: '1',
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                        mixBlendMode: 'overlay'
+                    });
+                    projectDiv.appendChild(blurEffect);
+
+                    const contentWrapper = document.createElement('div');
+                    contentWrapper.style.position = 'relative';
+                    contentWrapper.style.zIndex = '3';
+
+                    const projectTitle = document.createElement('h3');
+                    const projectLink = document.createElement('a');
+                    projectLink.href = project.link;
+                    projectLink.target = "_blank";
+                    projectLink.textContent = project.title;
+                    projectTitle.appendChild(projectLink);
+                    contentWrapper.appendChild(projectTitle);
+
+                    const projectDescription = document.createElement('p');
+                    projectDescription.textContent = project.description;
+                    projectDescription.style.display = 'none';
+                    contentWrapper.appendChild(projectDescription);
+
+                    const projectDate = document.createElement('p');
+                    projectDate.className = 'project-date';
+                    projectDate.textContent = `${project.date}`;
+                    projectDate.style.fontSize = '0.9em';
+                    projectDate.style.color = '#ccc';
+                    contentWrapper.appendChild(projectDate);
+
+                    projectDiv.appendChild(contentWrapper);
+                    projectDayGrid.appendChild(projectDiv);
+
+                    const clickedProjects = JSON.parse(localStorage.getItem('clickedProjects')) || [];
+                    const clickedProjectIds = clickedProjects.map(item => item.id);
+
+                    if (clickedProjectIds.includes(project.id)) {
+                        presentOverlay.style.display = 'none';
+                        projectDescription.style.display = 'block';
+                    }
+
+                    presentOverlay.addEventListener('click', (event) => {
+                        presentOverlay.classList.add('fade-out');
+
+                        const x = event.clientX / window.innerWidth;
+                        const y = event.clientY / window.innerHeight;
+
+                        confetti({
+                            particleCount: 100,
+                            spread: 70,
+                            origin: { x: x, y: y }
+                        });
+
+                        setTimeout(() => {
+                            presentOverlay.style.display = 'none';
+                            projectDescription.style.display = 'block';
+                        }, 500);
+
+                        if (!clickedProjectIds.includes(project.id)) {
+                            clickedProjects.push({
+                                id: project.id,
+                                dateClicked: new Date().toISOString()
+                            });
+                            localStorage.setItem('clickedProjects', JSON.stringify(clickedProjects));
+                        }
+
+                    });
                 });
-                projectDiv.appendChild(blurEffect);
-
-                const blurOverlay = document.createElement('div');
-                Object.assign(blurOverlay.style, {
-                    position: 'absolute',
-                    top: '0',
-                    left: '0',
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                    zIndex: '2'
-                });
-                projectDiv.appendChild(blurOverlay);
-
-                const contentWrapper = document.createElement('div');
-                contentWrapper.style.position = 'relative';
-                contentWrapper.style.zIndex = '3';
-
-                const projectTitle = document.createElement('h3');
-                const projectLink = document.createElement('a');
-                projectLink.href = project.link;
-                projectLink.target = "_blank";
-                projectLink.textContent = project.title;
-                projectTitle.appendChild(projectLink);
-                contentWrapper.appendChild(projectTitle);
+            })
+            .catch(error => console.error('Error loading Project-a-Day:', error));
 
 
-                const projectDescription = document.createElement('p');
-                projectDescription.textContent = project.description;
-                contentWrapper.appendChild(projectDescription);
+    </script>
 
-                const projectDate = document.createElement('p');
-                projectDate.className = 'project-date';
-                projectDate.textContent = `${project.date}`;
-                projectDate.style.fontSize = '0.9em';
-                projectDate.style.color = '#ccc';
-                contentWrapper.appendChild(projectDate);
 
-                projectDiv.appendChild(contentWrapper);
-                projectDayGrid.appendChild(projectDiv);
-            });
-        })
-        .catch(error => console.error('Error loading Project-a-Day:', error));
-</script>
 
 
 </body>
