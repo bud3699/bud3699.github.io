@@ -1,6 +1,14 @@
 {
     "projects": [
         {
+            "id": 5,
+            "title": "QReate",
+            "description": "A website to allow easy QR Generation for text, urls, contacts and wifi.",
+            "link": "FunThings/QReate",
+            "image": "Images/QReate.png",
+            "date": "2025-06-30"
+        },
+        {
             "id": 4,
             "title": "Patty Panic",
             "description": "Flip dem burgers and cook em or you fail. Silly game...",
