@@ -1,6 +1,14 @@
 {
     "projects": [
         {
+            "id": 6,
+            "title": "Points-less",
+            "description": "Points. Honestly just a clicking game. Its late and I'm tired.",
+            "link": "FunThings/Points-less",
+            "image": "Images/Points-less.png",
+            "date": "2025-07-01"
+        },
+        {
             "id": 5,
             "title": "QReate",
             "description": "A website to allow easy QR Generation for text, urls, contacts and wifi.",
