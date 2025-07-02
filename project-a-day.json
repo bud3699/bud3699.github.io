@@ -1,6 +1,14 @@
 {
     "projects": [
         {
+            "id": 7,
+            "title": "Moodcast",
+            "description": "Basic weather which just makes it weird... (Changed my original idea)",
+            "link": "FunThings/Moodcast",
+            "image": "Images/Moodcast.png",
+            "date": "2025-07-02"
+        },
+        {
             "id": 6,
             "title": "Points-less",
             "description": "Points. Honestly just a clicking game. Its late and I'm tired.",
