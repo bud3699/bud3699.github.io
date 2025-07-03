@@ -1,6 +1,14 @@
 {
     "projects": [
         {
+            "id": 8,
+            "title": "Histodate",
+            "description": "History based on todays date, the more you know",
+            "link": "FunThings/Histodate",
+            "image": "Images/Histodate.png",
+            "date": "2025-07-03"
+        },
+        {
             "id": 7,
             "title": "Moodcast",
             "description": "Basic weather which just makes it weird... (Changed my original idea)",
