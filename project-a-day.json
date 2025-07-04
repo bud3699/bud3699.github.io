@@ -1,6 +1,14 @@
 {
     "projects": [
         {
+            "id": 9,
+            "title": "DailyDoggo",
+            "description": "Dog. Vote. Dog.",
+            "link": "FunThings/DailyDoggo",
+            "image": "Images/DailyDoggo.jpg",
+            "date": "2025-07-04"
+        },
+        {
             "id": 8,
             "title": "Histodate",
             "description": "History based on todays date, the more you know",
