@@ -2,7 +2,15 @@
     "updates": [
         {
             "date": "2025-07-17",
-            "time": "20:06 GMT",
+            "time": "23:38 GMT",
+            "title": "[a6ea4ba] Initial BZ Support",
+            "text": "- Initial BZ Support added",
+            "image": null,
+            "video": "videos/bz.mp4"
+        },
+        {
+            "date": "2025-07-17",
+            "time": "04:06 GMT",
             "title": "[182e7de] Safer method patching",
             "text": "- Safer method patching \n- Macos doesnt have windows but has arc and oculus??? THEY DONT EVEN HAVE A DEFAULT NEWS URL TO PATCH BUT I DID IT ANYWAY",
             "image": "Images/macos.png",
