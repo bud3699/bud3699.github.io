@@ -1,6 +1,18 @@
 {
     "projects": [
       {
+        "title": "Subnautica API Reverse Engineer",
+        "description": "I'm currently in the process of reverse engineering and patching their api servers for desktop with a surprise mod coming soon",
+        "link": "Projects/SubAPI",
+        "image": "Images/SubApi.png"
+      },
+      {
+        "title": "MC-Boot",
+        "description": "A web based portal with login/password reset features for managing mc users and linux server over browser",
+        "link": "Projects/McBoot",
+        "image": "Images/McBoot.png"
+      },
+      {
         "title": "Infinity Base UE",
         "description": "An unreal engine pack i'm creating to interface with disney infinity portal.",
         "link": "Projects/InfinityBaseUe",

@@ -1,0 +1,540 @@
+{
+    "updates": [
+        {
+            "date": "2025-07-14",
+            "time": "20:06 GMT",
+            "title": "[04aaef] Maybe pools were bad idea",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:55 GMT",
+            "title": "[0d0262] Increased interval and switched to gevent spawning",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:41 GMT",
+            "title": "[7a3a97] Added is alive pre-fork log and preload false",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:34 GMT",
+            "title": "[7299d2] MONKEY PATCH",
+            "text": "- THIS BETTER WORK OR IMA FLIP BEANS",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:26 GMT",
+            "title": "[9d86ae] Add Gunicorn hooks to reset gevent hub after fork",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:22 GMT",
+            "title": "[745857] Prevent waiting loop from stopping",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:16 GMT",
+            "title": "[6cb3a3] Switched to threadpool to enable concurrent server startup tasks",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:06 GMT",
+            "title": "[c85573] Switched to Gevent for non-blocking concurrency replacing blocking sleeps",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "19:02 GMT",
+            "title": "[ba2c0b] Fixed opacity in User Management",
+            "text": "As proven, Polly is cool!",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "18:52 GMT",
+            "title": "[5c3e82] Fixed dev notify causing crash",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "18:42 GMT",
+            "title": "[06e095] Quick server patch",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "18:08 GMT",
+            "title": "[b67a5e] Added Loading screen for admin page",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "16:21 GMT",
+            "title": "[7aece7] Added support for live dev notifications",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "15:58 GMT",
+            "title": "[794bc1] Basic git manager with commit page",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "14:40 GMT",
+            "title": "[f6e1c7] Added initial support for live notifications + Bug Fixes",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-14",
+            "time": "13:42 GMT",
+            "title": "[47975b] Improved start-up times to < 1 minute",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "23:28 GMT",
+            "title": "[aee663] EVEN FASTER SHUTDOWN TIMES",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "23:01 GMT",
+            "title": "[bb442e] Faster Shutdown Times",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "22:52 GMT",
+            "title": "[962e2d] Fixed login button",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "22:21 GMT",
+            "title": "[953184] Tweaked admin UI",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "22:04 GMT",
+            "title": "[93122c] Tweaked sign in and disabled rate limit for testing",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "21:58 GMT",
+            "title": "[268e3a] Updated login page to follow step",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "21:49 GMT",
+            "title": "[5906a7] Add production/testing support",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "21:37 GMT",
+            "title": "[ad6597] Re-texture main index",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "16:12 GMT",
+            "title": "[d5b5aa] Tweaked to play gradient shift once",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "16:01 GMT",
+            "title": "[3b43e0] Added darkMode toggle for login and create user",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "15:17 GMT",
+            "title": "[51c736] Fixed feedback",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "14:54 GMT",
+            "title": "[79591e] Jank work around",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "14:49 GMT",
+            "title": "[28b398] Added cache support & Refresh Support & Reset Agreement support",
+            "text": "- Added cache support\n- Added Refresh Support\n- Added Reset Agreement support",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "13:15 GMT",
+            "title": "[86706e] Ui tweak to look even better",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "13:03 GMT",
+            "title": "[85271b] Tiny tweak",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "13:00 GMT",
+            "title": "[913124] TimCook Management page fixed/updated",
+            "text": "- need to do update_user_mcdata\n- need to do update_user_email",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "01:01 GMT",
+            "title": "[6c1b3b] Fixed password changing via admin",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-13",
+            "time": "00:38 GMT",
+            "title": "[e0def1] Fixed user creation",
+            "text": "- User creation updated to use the new hashed function for security",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-12",
+            "time": "23:57 GMT",
+            "title": "[619069] Added Password Reset via email",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-11",
+            "time": "20:58 GMT",
+            "title": "[c849ef] Tell me I cant, I dare you",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-11",
+            "time": "20:36 GMT",
+            "title": "[91e8d6] Fixed ban aka actually added proper code for it",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-11",
+            "time": "20:03 GMT",
+            "title": "[8b5a5a] Added to user panel",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-11",
+            "time": "19:58 GMT",
+            "title": "[292d23] tweaks",
+            "text": "- Moved logout button\n- Fixed helper function being called\n- Replaced alerts with notifications",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-11",
+            "time": "19:38 GMT",
+            "title": "[0b48a9] Initial support for on screen notifications",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-11",
+            "time": "19:37 GMT",
+            "title": "[4db94b] Initial support for advanced dashboard",
+            "text": "- Sending messages added",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-11",
+            "time": "16:29 GMT",
+            "title": "[80e430] add basic support for MC Info",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "23:31 GMT",
+            "title": "[f2b272] Regular user overhaul",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "23:25 GMT",
+            "title": "[3b94f9] - Added new account screen",
+            "text": "- Support for new account screen when logging in first time",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "22:42 GMT",
+            "title": "[614ed7] 403 + STYLE",
+            "text": "- Added 403 page\n- Styled creating user\n- Styled user management panel\n- Tweaked styling in login for smoother experience",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "22:08 GMT",
+            "title": "[88ef80] Added support for admins banning or kicking players",
+            "text": "- Added support for kick endpoint\n- Added support for ban endpoint\n- Fixed restricted endpoints not returning all data\n\nThe above features only applies to admins\n\nDiscord: https://discord.com/channels/1253756840169443428/1391920518193741844/1392990840951017653",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "21:45 GMT",
+            "title": "[d4507f] Support for advanced player checking",
+            "text": "- Support for checking player count\n- Support for checking what players online\n\nThe above features only applies to admins\n\n- Style overhaul\n- Logout button\n\nThe above features applies to all\n\nDiscord: https://discord.com/channels/1253756840169443428/1391893563943551077/1392984968900247612",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "20:25 GMT",
+            "title": "[99afd0] Styled 429 + RLE Handler",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "20:14 GMT",
+            "title": "[bd5191] Login styled",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "19:41 GMT",
+            "title": "[2c7b2d] Switched to js import",
+            "text": "- Switched to slate\n- Switched to js import",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "19:30 GMT",
+            "title": "[12ca2c] Initial Admin Page styling",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "19:13 GMT",
+            "title": "[6daea8] Added server say and tellraw",
+            "text": "- Added support for sending server say commands - Added support for sending tell raw commands\n\nThe above features only applies to admins\n\nDiscord: https://discord.com/channels/1253756840169443428/1391920518193741844/1392946861844730010",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "17:48 GMT",
+            "title": "[6f88c7] Fixed creating accounts causing database errors",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "17:43 GMT",
+            "title": "[b211f3] Added dev logging for restricted endpoints",
+            "text": "- When restricted endpoint is attempted to be accessed without proper authority, then dev log to the console\n\nThe above features only applies to admins\n\nDiscord: https://discord.com/channels/1253756840169443428/1391920518193741844/1392924064397393940",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "16:43 GMT",
+            "title": "[195046] Added account creation support",
+            "text": "- Created Proper GenHash Library\n- Created user store module for handling user account management\n- Added support for creating users\n- Added support for full user management\n\nThe above features only applies to admins\n\nDiscord: https://discord.com/channels/1253756840169443428/1391920518193741844/1392908961753071668",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "16:13 GMT",
+            "title": "[8b24f5] Added support for dev logs (debug logs)",
+            "text": "- Added support for dev logs (Not that anything logs there yet other than webserver boot)\n\nThe above features only applies to admins\n\nDiscord: https://discord.com/channels/1253756840169443428/1391920518193741844/1392901505551700118",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "15:53 GMT",
+            "title": "[885ff4] More admin Controls",
+            "text": "- Added support for booting mc server\n- Added support for booting proxy server\n- Added support for booting Linux server\n- Switched rebooting to use shutdown -r instead of reboot for higher control in future\n\nThe above features only applies to admins\n\nDiscord: https://discord.com/channels/1253756840169443428/1391920518193741844/1392896395698245755",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "15:23 GMT",
+            "title": "[58eee6] Added Basic Admin Controls - <#1391920518193741844>",
+            "text": "- Added support for shutting down mc server\n- Added support for shutting down proxy server\n- Added support for shutting down linux server\n- Added support for rebooting linux server\n- Added support to force refresh mc server status\n- Added support to force refresh proxy server status\n- Added support to force refresh linux server status\n\nThe above features only applies to admins",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:55 GMT",
+            "title": "[66c7c3] Added basic support for access levels",
+            "text": "- Access levels support added\n- Added Admin role\n- Added User role\n- Fixed load_user function to rehydrate role",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:42 GMT",
+            "title": "[c76c41] Added support for private key for ssh",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:37 GMT",
+            "title": "[36d7ba] switched debug to default to false",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:35 GMT",
+            "title": "[1d041c] Updated .env",
+            "text": "- Added host settings to ENV\n- Removed Webserver redefinition\n- Added Web debugging support configuration",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:27 GMT",
+            "title": "[639615] Staged spec folder",
+            "text": "- Stage test suite under spec/",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:24 GMT",
+            "title": "[bac62c] Added status log to gitignore",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:23 GMT",
+            "title": "[83383f] Removed status log File",
+            "text": "Removed status log file",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:21 GMT",
+            "title": "[8027ea] Added file titles",
+            "text": "",
+            "image": null,
+            "video": null
+        },
+        {
+            "date": "2025-07-10",
+            "time": "14:15 GMT",
+            "title": "[8cd500] Initial commit to source",
+            "text": "Initial Commit to source control of existing code base",
+            "image": null,
+            "video": null
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "updates": [
+        {
+            "date": "2025-07-17",
+            "time": "20:06 GMT",
+            "title": "[182e7de] Safer method patching",
+            "text": "- Safer method patching \n- Macos doesnt have windows but has arc and oculus??? THEY DONT EVEN HAVE A DEFAULT NEWS URL TO PATCH BUT I DID IT ANYWAY",
+            "image": "Images/macos.png",
+            "video": null
+        },
+        {
+            "date": "2025-07-15",
+            "time": "15:45 GMT",
+            "title": "Started work on it",
+            "text": "Started work on the endpoint",
+            "image": null,
+            "video": null
+        }
+    ]
+}
