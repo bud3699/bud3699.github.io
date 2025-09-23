@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EDID-DB - One of the largest collections of unique EDIDs" />
+    <title>EDID-DB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-br from-gray-800 to-gray-700 py-20 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">EDID-DB</h1>
+        <p class="text-lg max-w-2xl mx-auto">
+            One of the largest databases of unique EDIDs ever built — searchable, inspectable.
+        </p>
+        <button onclick="window.location.href='../../'"
+            class="mt-6 px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg shadow">
+            Go back
+        </button>
+        <div class="mt-10 animate-bounce">
+            <span class="text-sm text-gray-400">Scroll down ↓</span>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-center">About the Project</h2>
+        <div class="space-y-6 text-gray-300 text-base leading-relaxed">
+            <p>
+                EDID-DB was created to catalog Extended Display Identification Data (EDID) blocks from displays around
+                the world.
+                It became one of the largest archives of unique EDIDs, enabling developers, repair technicians, and
+                hardware
+                enthusiasts to better understand and troubleshoot display devices.
+            </p>
+            <p>
+                The platform supported searching, uploading, fingerprinting, and parsing of EDIDs into human-readable
+                fields.
+                Users could inspect manufacturer info, product IDs, serial numbers, and more, with options to download
+                and study each one.
+            </p>
+            <p class="text-green-400 font-semibold">
+                A heartfelt thank you goes out to everyone who donated and supported the project. Your contributions
+                helped
+                keep the database running and made it possible to grow into the large resource it became.
+            </p>
+            <p class="text-yellow-400 font-semibold">
+                Unfortunately, EDID-DB is no longer available. Even though I was the sole programmer behind the project,
+                it was hosted under a YouTuber’s subdomain. That individual chose to delete the entire code base and
+                database without warning. The mindset was clear: rather than let the project continue, they preferred to
+                remove it entirely. This was further shown by leaving only a default Apache landing page in its place —
+                suggesting the intent was to eventually replace my work with their own. The project was cut short in
+                this way,
+                despite the value it was providing to the community.
+            </p>
+
+            <p class="text-green-300 font-semibold">
+                If you would like to help host or support the revival of EDID-DB so that it can come back online,
+                your assistance would be greatly appreciated. Please reach out via email:
+                <a href="mailto:bud3699@gmail.com" class="text-indigo-400 underline">bud3699@gmail.com</a> or on
+                Discord: <span class="text-indigo-400 font-semibold">bud3699</span>.
+            </p>
+
+        </div>
+    </section>
+
+
+
+    <!-- Image Gallery
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="md:row-span-2">
+                <img src="images/edid-inspector.png" alt="EDID Inspector"
+                    class="rounded-xl shadow-lg w-full h-full object-contain max-h-[600px]" />
+            </div>
+
+            <div class="space-y-6">
+                <img src="images/search-view.png" alt="Search View"
+                    class="cursor-zoom-in rounded-xl shadow-lg w-full object-cover" />
+                <img src="images/upload-form.png" alt="Upload Form"
+                    class="cursor-zoom-in rounded-xl shadow-lg w-full object-cover" />
+                <img src="images/database-list.png" alt="Database List"
+                    class="cursor-zoom-in rounded-xl shadow-lg w-full object-cover" />
+            </div>
+
+            <div class="space-y-6">
+                <img src="images/hex-view.png" alt="Hex View"
+                    class="cursor-zoom-in rounded-xl shadow-lg w-full object-cover" />
+                <img src="images/progress-log.png" alt="Progress Log"
+                    class="cursor-zoom-in rounded-xl shadow-lg w-full object-cover" />
+            </div>
+        </div>
+        -->
+
+    <!-- Progress Section -->
+    <section id="progress" class="py-16 bg-gray-800 px-6 mt-12">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">Progress Updates</h2>
+            <div id="progress-content" class="space-y-8">
+                <!-- Updates dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center py-6 border-t border-gray-700">
+        <p class="text-sm text-gray-500">&copy; 2025 EDID-DB Project. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="relative w-full max-w-6xl max-h-screen px-4">
+            <button id="closeLightbox"
+                class="absolute top-4 right-4 text-white text-3xl font-bold z-10">&times;</button>
+            <img id="lightboxImage" src="" alt="Expanded View"
+                class="w-full max-h-screen object-contain mx-auto rounded-xl shadow-lg" />
+        </div>
+    </div>
+
+    <!-- JS for Progress -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressContainer = document.getElementById('progress-content');
+            const jsonFilePath = `progress.json?timestamp=${Date.now()}`;
+
+            fetch(jsonFilePath)
+                .then(response => response.json())
+                .then(data => {
+                    data.updates.forEach(update => {
+                        const updateElement = document.createElement('div');
+                        updateElement.className = 'bg-gray-700 p-6 rounded-xl shadow';
+
+                        updateElement.innerHTML = `
+                                <h3 class="text-xl font-semibold mb-2">${update.title}</h3>
+                                <p class="text-sm text-gray-400 mb-2"><strong>Date:</strong> ${update.date} | <strong>Time:</strong> ${update.time}</p>
+                                <p class="mb-4">${update.text.replace(/\n/g, '<br>')}</p>
+                                ${update.image ? `<img src="${update.image}" alt="Progress Image" class="rounded-lg mb-4 max-w-full">` : ''}
+                                ${update.video ? `<video controls class="w-full rounded-lg"><source src="${update.video}"></video>` : ''}
+                                `;
+
+                        progressContainer.appendChild(updateElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching progress updates:', error);
+                    progressContainer.innerHTML = '<p class="text-red-400">Failed to load progress updates. Please try again later.</p>';
+                });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const closeBtn = document.getElementById('closeLightbox');
+
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImage.src = img.src;
+                    lightboxImage.alt = img.alt;
+                    lightboxModal.classList.remove('hidden');
+                });
+            });
+
+            closeBtn.addEventListener('click', () => lightboxModal.classList.add('hidden'));
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

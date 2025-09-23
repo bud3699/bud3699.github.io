@@ -1,0 +1,52 @@
+{
+    "updates": [
+        {
+            "title": "[shutdown] Project cut short",
+            "date": "2025-09",
+            "time": null,
+            "text": "EDID-DB was abruptly taken offline when its hosting was deleted without warning. Despite being one of the largest archives of unique EDIDs, the project ended suddenly due to circumstances outside my control.",
+            "image": null,
+            "video": null
+        },
+        {
+            "title": "[css] Display page tweaks and CSS overhaul",
+            "date": null,
+            "time": null,
+            "text": "Refined the display inspector page with improved formatting, added clarity to parsed fields, and gave the entire site a fresh CSS polish.",
+            "image": null,
+            "video": null
+        },
+        {
+            "title": "[fun] Easter eggs & seasonal themes",
+            "date": null,
+            "time": null,
+            "text": "Introduced hidden easter eggs and rotating seasonal themes to give the project personality and variety.",
+            "image": null,
+            "video": null
+        },
+        {
+            "title": "[upload] Monitor EDID upload support",
+            "date": null,
+            "time": null,
+            "text": "Added ability for users to upload their own monitor EDID files, expanding the database collaboratively.",
+            "image": null,
+            "video": null
+        },
+        {
+            "title": "[ui] Early UI tweaks",
+            "date": null,
+            "time": null,
+            "text": "Made significant adjustments to the layout and styling for a cleaner and more responsive interface.",
+            "image": null,
+            "video": null
+        },
+        {
+            "title": "[init] Project created",
+            "date": null,
+            "time": null,
+            "text": "Started development of EDID-DB. The foundation for the searchable database and inspector was laid out.",
+            "image": null,
+            "video": null
+        }
+    ]
+}

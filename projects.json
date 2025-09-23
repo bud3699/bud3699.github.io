@@ -26,8 +26,8 @@
       },
       {
         "title": "Buds Edid Database",
-        "description": "One of the largest EDID databases with Unique displays only (No duplicates to save on server speed/processing)",
-        "link": "/Edid-Database",
+        "description": "One of the largest EDID databases with unique displays only (no duplicates to save on server speed/processing). The project was taken offline in September 2025 when its hosting was deleted without warning. For more details, click the title.",
+        "link": "Projects/EDIDdb",
         "image": "../Images/EdidDatabase.png"
       },
       {
