@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer with Epic Confetti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+    body {
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+        transition: background-color 1s ease;
+    }
+
+    .countdown {
+        font-size: 10rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .final-countdown {
+        font-size: 12rem;
+        color: #ff4747;
+        text-shadow: 0 0 5px #ff4747, 0 0 10px #ff4747;
+        animation: pulse 1s infinite;
+    }
+
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+</style>
+</head>
+<body class="flex items-center justify-center bg-gradient-to-r ">
+    <div class="flex items-center justify-center flex-col text-center">
+        <div id="countdown" class="countdown">00:00:00</div>
+    </div>
+
+    <script>
+        const targetDate = new Date("November 4, 2025 9:00:00").getTime();
+        const countdownElement = document.getElementById("countdown");
+
+        function triggerConfetti() {
+            const particleCount = 1000;
+            const spread = 100;
+
+            confetti({
+                particleCount: particleCount,
+                angle: 60,
+                spread: spread,
+                origin: { x: 0.1, y: 0.5 }
+            });
+            confetti({
+                particleCount: particleCount,
+                angle: 120,
+                spread: spread,
+                origin: { x: 0.9, y: 0.5 }
+            });
+            confetti({
+                particleCount: particleCount * 2,
+                angle: 90,
+                spread: 120,
+                origin: { x: 0.5, y: 0.5 }
+            });
+
+            setInterval(() => {
+                confetti({
+                    particleCount: 500,
+                    spread: 180,
+                    origin: { x: Math.random(), y: Math.random() }
+                });
+            }, 500);
+
+            setInterval(() => {
+                confetti({
+                    particleCount: 300,
+                    spread: 180,
+                    origin: { x: Math.random(), y: Math.random() }
+                });
+            }, 2000);
+        }
+
+        function interpolateColor(color1, color2, factor) {
+            let hex1 = color1.slice(1);
+            let hex2 = color2.slice(1);
+            let r1 = parseInt(hex1.substring(0, 2), 16);
+            let g1 = parseInt(hex1.substring(2, 4), 16);
+            let b1 = parseInt(hex1.substring(4, 6), 16);
+            let r2 = parseInt(hex2.substring(0, 2), 16);
+            let g2 = parseInt(hex2.substring(2, 4), 16);
+            let b2 = parseInt(hex2.substring(4, 6), 16);
+
+            let r = Math.round(r1 + (r2 - r1) * factor);
+            let g = Math.round(g1 + (g2 - g1) * factor);
+            let b = Math.round(b1 + (b2 - b1) * factor);
+
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft < 0) {
+                clearInterval(interval);
+                countdownElement.textContent = "00:00:00";
+                triggerConfetti();
+                document.body.style.backgroundColor = "#1e3a8a";
+                countdownElement.classList.add("final-countdown");
+                return;
+            }
+
+            const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeLeft / 1000) % 60);
+
+            countdownElement.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+            const totalDuration = targetDate - new Date("November 3, 2025 9:00:00").getTime(); 
+            const timeProgress = 1 - timeLeft / totalDuration;
+
+            const startColor = "#ff4747";
+            const endColor = "#1e3a8a";
+
+            document.body.style.backgroundColor = interpolateColor(startColor, endColor, timeProgress);
+
+            if (seconds <= 10 && hours === 0 && minutes === 0) {
+                countdownElement.classList.add("final-countdown");
+                document.body.style.animation = "none"; 
+            } else {
+                countdownElement.classList.remove("final-countdown");
+            }
+        }
+
+        function pad(num) {
+            return num < 10 ? "0" + num : num;
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
